@@ -1,0 +1,4 @@
+%ul.nav
+    - @categories.each do |c|
+        %li 
+            != menu_link c.name, url(:home, :categories, c.slug)

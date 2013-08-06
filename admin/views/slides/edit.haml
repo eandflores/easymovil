@@ -1,0 +1,8 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:slides, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:slides, :new)
+  %li.active=link_to tag_icon(:edit, pat(:edit)), url(:slides, :edit, :id => @slide.id)
+
+.tabs-content
+  -form_for :slide, url(:slides, :update, :id => @slide.id), :method => :put, :class => 'form-horizontal', :multipart => true do |f|
+    =partial 'slides/form', :locals => { :f => f }

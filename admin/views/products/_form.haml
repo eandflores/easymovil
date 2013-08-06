@@ -1,0 +1,121 @@
+- categories_select = Category.all(fields: [:id, :name]).map{|x| [x.name, x.id]}
+- error = @product.errors.key?(:name) && @product.errors[:name].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:slug) && @product.errors[:slug].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :slug, :class => 'control-label'
+  .controls
+    =f.text_field :slug, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:slug, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:description) && @product.errors[:description].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    =f.text_area :description, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:price) && @product.errors[:price].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :price, :class => 'control-label'
+  .controls
+    =f.text_field :price, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:price, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:counter) && @product.errors[:counter].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :counter, :class => 'control-label'
+  .controls
+    =f.text_field :counter, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:counter, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:add_to_cart) && @product.errors[:add_to_cart].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :add_to_cart, :class => 'control-label'
+  .controls
+    =f.text_field :add_to_cart, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:add_to_cart, :class => 'text-error') : pat(:example)
+- error = @product.errors.key?(:sells) && @product.errors[:sells].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :sells, :class => 'control-label'
+  .controls
+    =f.text_field :sells, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:sells, :class => 'text-error') : pat(:example)
+
+- error = @product.errors.key?(:image) && @product.errors[:image].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :image, :class => 'control-label'
+  .controls
+    =f.file_field :image, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:image, :class => 'text-error') : ''
+    - unless @product.image.blank?
+      %br
+      = image_tag @product.image.url(:mini)
+
+- error = @product.errors.key?(:category_id) && @product.errors[:category_id].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :category_id, :class => 'control-label'
+  .controls
+    =f.select :category_id, :class => 'input-xlarge input-with-feedback', options: categories_select, selected: @product.category_id
+    %span.help-inline=error ? f.error_message_on(:category_id, :class => 'text-error') : pat(:example)
+
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :subcategory_id, :class => 'control-label'
+  .controls
+    =f.select :subcategory_id, :class => 'input-xlarge input-with-feedback', options: Subcategory.all(fields: [:id, :name]).map{|x| [x.name, x.id]}, selected: @product.subcategory_id
+    %span.help-inline=error ? f.error_message_on(:subcategory_id, :class => 'text-error') : ''
+- error = @product.errors.key?(:es_tabla) && @product.errors[:es_tabla].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :es_tabla, :class => 'control-label'
+  .controls
+    =f.check_box :es_tabla, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:es_tabla, :class => 'text-error') : ''
+
+- error = @product.errors.key?(:is_roll) && @product.errors[:is_roll].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :is_roll, :class => 'control-label'
+  .controls
+    =f.check_box :is_roll, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:is_roll, :class => 'text-error') : ''
+
+.control-group
+  .controls.well
+    %h5 Productos de la tabla (utilizar solo si corresponde)
+    %a.btn.btn-primary.add{href: '#productos'}
+      %i.icon-white.icon-plus
+      Agregar producto
+    %br
+    %br
+    
+    
+    %table#productos
+      - if @product.es_tabla
+        - JSON.parse(@product.categorias_tabla).each do |i|
+          %tr
+            %td= select_tag 'category[]', options: categories_select, selected: i
+            %td
+              %a.btn.btn-danger.remove{href: 'javascript:;'}
+                %i.icon-trash.icon-white
+                Quitar
+
+
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:products, :index), :class => 'btn'
+
+
+:javascript
+  $(function(){
+    $('.btn.add').click(function(){
+      $('#productos').append('<tr><td>#{select_tag('category[]', options: categories_select).gsub("\n", "")}</td><td><a href="javascript:;" class="btn btn-danger remove"><i class="icon-trash icon-white"></i> Quitar</a></td></tr>');
+    });
+    $('#productos').on('click', '.remove', function(){
+      console.log( $(this) );
+      $(this).parent().parent().remove();
+    });
+  })
+  

@@ -1,0 +1,98 @@
+%ul.nav.nav-tabs
+    %li=link_to tag_icon(:list, pat(:list)), url(:carts, :index)
+    %li.active=link_to tag_icon(:edit, 'Detalle de Pedido'), url(:carts, :edit, :id => @cart.id)
+
+.tabs-content
+    -#form_for :cart, url(:carts, :update, :id => @cart.id), :method => :put, :class => 'form-horizontal' do |f|
+
+    - if @cart.cart_products.count == 0
+        %h3 No hay productos en el carro de compras
+    - else
+        - total = 0
+        %table.table.table-bordered.table-striped
+            %thead
+                %tr 
+                    %th{colspan: 2} Producto
+                    %th Precio Unidad
+                    %th Cantidad
+                    %th Subtotal
+            %tbody
+                - @cart.cart_products.each do |cp|
+                    - product = cp.product    
+                    %tr
+                        %td{style: 'width: 75px'}= image_tag product.image.url(:mini)
+                        %td
+                            = product.name
+                            - if product.es_tabla && !cp.productos.blank?
+                                %ul
+                                    - JSON.parse(cp.productos).each do |tp|
+                                        %li= Product.get(tp).name
+                        %td= number_to_currency product.price
+                        %td= cp.quantity
+                            
+                            
+                        %td
+                            - total += product.price * cp.quantity
+                            = number_to_currency product.price * cp.quantity
+
+            %tfoot
+                %tr
+                    %th{colspan: 3}
+                    %th Subtotal
+                    %th= number_to_currency( @cart.subtotal )
+                %tr
+                    %th{colspan: 3}
+                    %th Descuentos
+                    %th
+                        = number_to_currency @cart.discount
+                %tr
+                    %td{colspan: 3}
+                    %th Total
+                    %th= number_to_currency( @total = @cart.total )
+
+    %h2 Detalle de envío
+
+    .pull-left
+        %dl.dl-horizontal
+            %dt Usuario
+            %dd= @cart.account.nombre
+            %dt Dirección
+            %dd= @cart.address
+            %dt Sector
+            %dd= @cart.sector.blank? ? 'No definido' : @cart.sector.name
+            %dt Teléfono
+            %dd= @cart.telephone
+            %dt Detalle envío
+            %dd= @cart.description
+
+    .pull-right{style: 'width: 50%'}
+        %table.table.table-bordered
+            
+            %tbody
+                %tr.info
+                    %th Subtotal pedido
+                    %td= number_to_currency @total
+                %tr
+                    %th Valor envío
+                    %td= number_to_currency( @cart.sector.blank? ? 0 : @cart.sector.price )
+                %tr.success
+                    %td Total pedido
+                    %td= number_to_currency( @total + ( @cart.sector.blank? ? 0 : @cart.sector.price ) )
+    
+    .clearfix
+    %h3 Cambiar estado del pedido
+    - form_for :cart, url(:carts, :update, :id => @cart.id), :method => :put, :class => 'form-horizontal' do |f|
+
+        %label Estado actual
+        .badge{class: Cart::BADGES[@cart.status]}
+            = get_name Cart, :ESTADOS, @cart.status
+        
+        %br
+        
+        %label Cambiar estado
+        = f.select :status, options: [['Seleccione', nil]]+for_select(Cart, :ESTADOS), selected: nil
+
+        != btn_guardar
+
+
+    

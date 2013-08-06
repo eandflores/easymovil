@@ -1,0 +1,8 @@
+Estimado <%= user.nombre %>,
+
+Su pedido Nº <%= cart.id %> ha cambiado de estado a: <%= Cart::ESTADOS[cart.status].to_s.humanize.titleize %>
+
+Muchas gracias por su preferencia.
+
+Sunset Sushi Delivery
+http://www.sunsetsushidelivery.cl

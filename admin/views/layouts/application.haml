@@ -1,0 +1,45 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    %meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+    %meta{:name => :viewport, :content => 'width=device-width,initial-scale=1'}
+    %title= @title.present? ? "#{@title} | Padrino Admin" : "Padrino Admin"
+    =favicon_tag 'favicon.ico'
+    %link{:href => 'http://fonts.googleapis.com/css?family=Varela', :rel => :stylesheet}
+    =stylesheet_link_tag 'bootstrap', 'application'
+    %link{:href => '/stylesheets/badges.css', :rel => :stylesheet}
+    =javascript_include_tag 'jquery-1.9.0.min', (Padrino.env == :production ? 'bootstrap.min' : %w[bootstrap/bootstrap-affix bootstrap/bootstrap-alert bootstrap/bootstrap-button bootstrap/bootstrap-carousel bootstrap/bootstrap-collapse bootstrap/bootstrap-dropdown bootstrap/bootstrap-tooltip bootstrap/bootstrap-transition bootstrap/bootstrap-typeahead bootstrap/bootstrap-modal bootstrap/bootstrap-popover bootstrap/bootstrap-scrollspy bootstrap/bootstrap-tab]), 'ckeditor', :application
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %ul.nav.pull-right
+
+            %li.navbar-edit-account=link_to tag_icon(:user), url(:accounts, :edit, :id => current_account.id), :title => pat(:profile), :class => 'navbar-nav-link'
+            %li.navbar-logout
+              =button_to :logout, url(:sessions, :destroy), :method => :delete, :class => 'navbar-nav-form' do
+                =content_tag :button, tag_icon(:off), :type => :submit, :title => pat(:logout), :class => 'navbar-nav-form-link'
+
+          %ul.nav.pull-left
+            %li.navbar-module=link_to 'Sunset Sushi', url(:base_index), :title => 'Padrino Admin'
+            - project_modules.reverse.each do |project_module|
+              %li{:class => "navbar-module #{('active' if request.path_info =~ /^#{project_module.path}/)}"}
+                =link_to project_module.human_name, project_module.path('/admin')
+
+    .container.main
+      .main-wrapper
+        =[:error, :warning, :success, :notice].map { |type| flash_tag(type, :class => "alert alert-#{type} fade in", :bootstrap => true) }.join.html_safe
+        .row=yield
+        .main-wrapper-push
+
+    %footer
+      .footer-wrapper.container
+        %p.pull-left
+          Copyright &copy;
+          =Time.now.year
+          Villagrán &amp; Quiroz LTDA.

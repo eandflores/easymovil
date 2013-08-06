@@ -1,0 +1,89 @@
+!!! 5
+%html{:lang => 'en'}
+    %head
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        %meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+        %meta{:name => :viewport, :content => 'width=device-width,initial-scale=1'}
+        %title= @title.present? ? "#{@title} | Sunset Sushi" : "Sunset Sushi"
+        / =favicon_tag 'favicon.ico'
+        %link{:href => "http://fonts.googleapis.com/css?family=Julee", :rel => "stylesheet", :type => "text/css"}/
+        =stylesheet_link_tag 'bootstrap', 'bootstrap-responsive', 'application'
+        =javascript_include_tag 'jquery', 'jquery-ujs', 'jquery-cycle', 'jquery-bgpos', (Padrino.env == :production ? 'bootstrap.min' : 'bootstrap'), :application
+
+    %body      
+        .container-narrow
+            .headerbar.pull-right
+                %a{:href => "http://www.facebook.com/sunsetsushiconcepcion"}
+                    Facebook
+                    = image_tag 'facebook.png'
+            .clearfix
+            .header
+                = image_tag 'logo.png', alt: 'Sunset Sushi'
+                
+                .pull-right
+                    %ul.top-menu.nav.nav-pills.pull-right
+                        %li
+                            %a{:href => "/"} Mi cuenta
+                        %li
+                            %a{:href => "/"} Carro de compra
+                    .clearfix
+                    %h1.pull-right 41-3254198
+                    .clearfix
+                    %ul.bottom-menu.nav.nav-pills.pull-right
+                        %li
+                            %a{:href => "/"} Inicio
+                        %li
+                            %a{:href => "/"} Promociones
+                        %li
+                            %a{:href => "/"} Ubicación
+                        %li
+                            %a{:href => "/"} Horarios
+                        %li
+                            %a{:href => "/"} Contacto
+            .sliderbox
+                #pager.pull-right
+                .slider
+                    - 10.times do |i|
+                        .slide
+                            .imagen.span6
+                                = image_tag 'roll_ejemplo.png'
+                            .texto.span4
+                                %h1 Lunes y Martes
+                                %h2 
+                                    3 x 2 en Rolls
+                                    = i
+                                %h3 Local y Domicilio 
+                                %h4 (Descuenta el de menor valor)
+
+            
+            .clearfix.premenu
+            .menu
+                %ul.nav
+                    %li 
+                        %a{:href => "/"} Makimonos
+                    %li
+                        %a{:href => "/"} Sake Roll's
+                    %li
+                        %a{:href => "/"} Hosomaki
+                    %li
+                        %a.active{:href => "/"} Especial Caliente
+                    %li
+                        %a{:href => "/"} Avocado Roll's
+            .products
+                - 15.times do
+                    .product
+                        = image_tag 'roll_ejemplo.png'
+                        .title
+                            %span.rojo.pull-left Avocado Sake
+                            %span.pull-right $4.100
+                        .subtitle
+                            Salmón palta, cebollín envuelto en Palta
+                            %br
+                            8 bocados envueltos en palta
+                        .comprar
+                            %a{:href => "/"} Comprar
+                .clearfix
+    

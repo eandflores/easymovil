@@ -1,0 +1,25 @@
+Estimado <%= user.nombre %>,
+
+Su pedido es el siguiente:
+<% cart.cart_products.each do |c| %>
+    - <%= c.quantity %> <%= c.product.name %>: <%= c.product_price * c.quantity  %>
+<% end %>
+    Subtotal: <%=  cart.subtotal %>
+    Descuento: <%= cart.discount %>
+    Despacho: <%= cart.delivery_total %>
+    Total: <%= @total = (cart.total + cart.delivery_total)  %>
+
+Para finalizar la compra debe realizar el depósito de su compra:
+
+Banco: <%= VQ::Cart.banco %>
+Cuenta <%= VQ::Cart.tipo_cuenta %>: <%= VQ::Cart.numero_cuenta %>
+Rut: <%= VQ::Cart.rut %>
+Nombre: <%= VQ::Cart.nombre %>
+Correo: <%= VQ::Cart.email %>
+
+Luego enviar el comprobante de pago para comenzar la elaboración del producto.
+
+Muchas gracias por su preferencia.
+
+Sunset Sushi Delivery
+http://www.sunsetsushidelivery.cl

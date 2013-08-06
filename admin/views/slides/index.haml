@@ -1,0 +1,64 @@
+%ul.nav.nav-tabs
+  %li.active=link_to tag_icon(:list, pat(:list)), url(:slides, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:slides, :new)
+
+.tabs-content
+  %table#list.table.table-striped.table-hover.table-condensed
+    %thead
+      %tr
+        %th.header.list-menu
+          .dropdown
+            %a.list-menu-toggle.dropdown-toggle{:href => '#', :'data-toggle' => :dropdown}
+              =tag_icon :magic
+              %span.caret
+            %ul.list-menu.dropdown-menu{:role => :menu}
+              %li.list-menu-wrapper=link_to tag_icon(:check, pat(:select_all)), '#', :id => 'select-all', :class => 'list-menu-link'
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon(:'check-empty', pat(:deselect_all)), '#', :id => 'deselect-all', :class => 'list-menu-link list-menu-link-disabled'
+              %li.list-menu-divider.divider
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon(:trash, pat(:delete_selected)), '#', :id => 'delete-selected', :class => 'list-menu-link list-menu-link-disabled'
+                .list-menu-popover-delete-selected.popover.right
+                  .arrow
+                  %h3.popover-title=pat(:delete_selected_title)
+                  .popover-content
+                    -form_tag url(:slides, :destroy_many), :method => :delete do
+                      =hidden_field_tag :slide_ids, :'data-delete-many-ids' => true
+                      =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
+                      .btn.btn-small.cancel=pat(:cancel)
+        %th.header= :id
+        %th.header= :name
+        %th.header= :enabled
+        %th.header= :texto_1
+        %th.header= :texto_2
+        %th.header= :texto_3
+        %th.header= :texto_4
+        %th.header= :position
+        %th.header= :image
+        %th.header.list-row-action-header
+
+    %tbody
+      -@slides.each do |slide|
+        %tr.list-row
+          %td.list-column.list-selectable
+            =check_box_tag 'slide_ids[]', :value => slide.id, :class => 'list-selectable-checkbox'
+          %td.list-column=slide.id
+          %td.list-column=slide.name
+          %td.list-column=slide.enabled ? tag_icon(:ok) : tag_icon(:remove)
+          %td.list-column=slide.texto_1
+          %td.list-column=slide.texto_2
+          %td.list-column=slide.texto_3
+          %td.list-column=slide.texto_4
+          %td.list-column=slide.position
+          %td.list-column=image_tag slide.image.url(:mini)
+          %td.list-column.list-row-action
+            .list-row-action-wrapper
+              =link_to tag_icon(:edit), :href => url(:slides, :edit, :id => slide.id), :rel => :tooltip, :title => "#{pat(:edit)} slide", :class => 'list-row-action-wrapper-link'
+              =link_to tag_icon(:trash), :rel => :tooltip, :title => "#{pat(:delete)} slide", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              .popover.list-row-action-popover-delete-one.left
+                .arrow
+                %h3.popover-title=pat(:delete, :model => "slide")
+                .popover-content
+                  -form_tag url(:slides, :destroy, :id => slide.id), :method => :delete do
+                    =submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
+                    .btn.btn-small.cancel=pat(:cancel)

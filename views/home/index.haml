@@ -1,0 +1,35 @@
+.sliderbox
+    #pager.pull-right
+    .slider
+        - @slides.each do |slide|
+            .slide
+                .imagen.span6
+                    = image_tag slide.image.url(:slide)
+                .texto.span4
+                    %h1= slide.texto_1
+                    %h2= slide.texto_2
+                    %h3= slide.texto_3
+                    %h4= slide.texto_4
+
+
+.clearfix.premenu
+.menu
+    = part 'home/categories'
+.products
+    - if @products.empty?
+        %h1.text-center No existen productos para esta categoría
+    - else
+        - @products.each do |p|
+            .product
+                = image_tag p.image.url(:product)
+                .title
+                    %span.rojo.pull-left= p.name
+                    %span.pull-right= number_to_currency p.price
+                .subtitle
+                    = p.description
+                .comprar
+                    %a{href: p.es_tabla ? url(:cart_add_tabla, p.slug) : url(:cart_add, p.slug)} 
+                        %i.icon-white.icon-plus
+                        Comprar
+
+    .clearfix

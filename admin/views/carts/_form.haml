@@ -1,0 +1,55 @@
+- error = @cart.errors.key?(:total) && @cart.errors[:total].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :total, :class => 'control-label'
+  .controls
+    =f.text_field :total, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:total, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:address) && @cart.errors[:address].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :address, :class => 'control-label'
+  .controls
+    =f.text_field :address, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:address, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:telephone) && @cart.errors[:telephone].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :telephone, :class => 'control-label'
+  .controls
+    =f.text_field :telephone, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:telephone, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:description) && @cart.errors[:description].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :description, :class => 'control-label'
+  .controls
+    ~f.text_area :description, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:description, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:delivery_total) && @cart.errors[:delivery_total].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :delivery_total, :class => 'control-label'
+  .controls
+    =f.text_field :delivery_total, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:delivery_total, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:status) && @cart.errors[:status].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :status, :class => 'control-label'
+  .controls
+    =f.text_field :status, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:status, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:account_id) && @cart.errors[:account_id].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :account_id, :class => 'control-label'
+  .controls
+    =f.text_field :account_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:account_id, :class => 'text-error') : pat(:example)
+- error = @cart.errors.key?(:sector_id) && @cart.errors[:sector_id].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :sector_id, :class => 'control-label'
+  .controls
+    =f.text_field :sector_id, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:sector_id, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:carts, :index), :class => 'btn'

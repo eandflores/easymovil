@@ -1,0 +1,12 @@
+logger.info "---- INIT SEEDS ----".red
+
+
+c1 = Category.create name: 'Makimonos', position: 1
+c2 = Category.create name: 'Sake Roll\'s', position: 2
+c3 = Category.create name: 'Hosomaki', position: 3
+c4 = Category.create name: 'Especial Caliente', position: 4
+c5 = Category.create name: 'Avocado Roll\'s', position: 5
+
+Category.all.each do |c|
+    c.update slug: c.name.to_slug if c.slug.blank?
+end

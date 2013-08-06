@@ -1,0 +1,63 @@
+- error = @slide.errors.key?(:name) && @slide.errors[:name].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:texto_1) && @slide.errors[:texto_1].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :texto_1, :class => 'control-label'
+  .controls
+    =f.text_field :texto_1, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:texto_1, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:texto_2) && @slide.errors[:texto_2].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :texto_2, :class => 'control-label'
+  .controls
+    =f.text_field :texto_2, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:texto_2, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:texto_3) && @slide.errors[:texto_3].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :texto_3, :class => 'control-label'
+  .controls
+    =f.text_field :texto_3, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:texto_3, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:texto_4) && @slide.errors[:texto_4].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :texto_4, :class => 'control-label'
+  .controls
+    =f.text_field :texto_4, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:texto_4, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:layout) && @slide.errors[:layout].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :layout, :class => 'control-label'
+  .controls
+    =f.text_field :layout, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:layout, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:position) && @slide.errors[:position].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :position, :class => 'control-label'
+  .controls
+    =f.text_field :position, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:position, :class => 'text-error') : pat(:example)
+- error = @slide.errors.key?(:image) && @slide.errors[:image].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :image, :class => 'control-label'
+  .controls
+    =f.file_field :image, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:image, :class => 'text-error') : ''
+    - unless @slide.image.blank?
+      %br
+      = image_tag @slide.image.url(:mini)
+- error = @slide.errors.key?(:enabled) && @slide.errors[:enabled].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :enabled, :class => 'control-label'
+  .controls
+    =f.check_box :enabled, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:enabled, :class => 'text-error') : pat(:example)
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:slides, :index), :class => 'btn'

@@ -1,0 +1,7 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:subcategories, :index)
+  %li.active=link_to tag_icon(:plus, pat(:new)), url(:subcategories, :new)
+
+.tabs-content
+  -form_for :subcategory, url(:subcategories, :create), :class => 'form-horizontal' do |f|
+    =partial 'subcategories/form', :locals => { :f => f }

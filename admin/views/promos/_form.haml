@@ -1,0 +1,79 @@
+- error = @promo.errors.key?(:tres_por_dos) && @promo.errors[:tres_por_dos].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :tres_por_dos, :class => 'control-label'
+  .controls
+    =f.check_box :tres_por_dos, :class => 'input-xlarge input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:tres_por_dos, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:porcentaje) && @promo.errors[:porcentaje].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :porcentaje, :class => 'control-label'
+  .controls
+    =f.text_field :porcentaje, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:porcentaje, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:lunes) && @promo.errors[:lunes].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :lunes, :class => 'control-label'
+  .controls
+    =f.check_box :lunes, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:lunes, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:martes) && @promo.errors[:martes].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :martes, :class => 'control-label'
+  .controls
+    =f.check_box :martes, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:martes, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:miercoles) && @promo.errors[:miercoles].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :miercoles, :class => 'control-label'
+  .controls
+    =f.check_box :miercoles, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:miercoles, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:jueves) && @promo.errors[:jueves].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :jueves, :class => 'control-label'
+  .controls
+    =f.check_box :jueves, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:jueves, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:viernes) && @promo.errors[:viernes].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :viernes, :class => 'control-label'
+  .controls
+    =f.check_box :viernes, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:viernes, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:sabado) && @promo.errors[:sabado].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :sabado, :class => 'control-label'
+  .controls
+    =f.check_box :sabado, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:sabado, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:domingo) && @promo.errors[:domingo].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :domingo, :class => 'control-label'
+  .controls
+    =f.check_box :domingo, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:domingo, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:inicio) && @promo.errors[:inicio].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :inicio, :class => 'control-label'
+  .controls
+    =f.text_field :inicio, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:inicio, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:fin) && @promo.errors[:fin].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :fin, :class => 'control-label'
+  .controls
+    =f.text_field :fin, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:fin, :class => 'text-error') : pat(:example)
+- error = @promo.errors.key?(:enabled) && @promo.errors[:enabled].count > 0
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :enabled, :class => 'control-label'
+  .controls
+    =f.check_box :enabled, :class => 'input-xlarge input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:enabled, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:promos, :index), :class => 'btn'
