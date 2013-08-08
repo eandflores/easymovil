@@ -1,18 +1,27 @@
-set :application, "sunsetsushideploy"
-set :repository,  "git@bitbucket.org:avillagran/sunsetsushi.git"
+set :application, "casaventanaapp"
+set :repository,  "git@bitbucket.org:avillagran/easymovil.git"
 set :branch, 'master'
 set :scm, :git
 set :use_sudo, false
+#set :user, 'dportales'
+#set :password, 'dpconce.q1w2e3'
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "root@sunsetsushidelivery.cl"                          # Your HTTP server, Apache/etc
-role :app, "root@sunsetsushidelivery.cl"                          # This may be the same as your `Web` server
+# role :web, "root@10.1.1.6"
+# role :app, "root@10.1.1.6"
+role :web, "root@198.211.117.245"                          # Your HTTP server, Apache/etc
+role :app, "root@198.211.117.245"                         # This may be the same as your `Web` server
 
-set :stage, 'production'
+set :stage, 'development'
 
-set :deploy_to, "/mnt/sites/sunsetsushidelivery"
+
+set :rvm_type, :system    # :user is the default
+#set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"") # Read from local system
+set :rvm_ruby_string, '1.9.3'
+
+require "rvm/capistrano"
+
+set :deploy_to, "/mnt/sites/easymovil"
 set :current_path, "#{deploy_to}/current"
 set :releases_path, "#{deploy_to}/releases"
 set :shared_path, "#{deploy_to}/shared"
@@ -23,9 +32,6 @@ namespace :deploy do
   task :finalize_update do
     ['database.rb'].each do |i|
       run "rm -rf #{release_path}/config/#{i} && ln -s #{shared_path}/system/config/#{i} #{release_path}/config/#{i}"
-    end
-    ['uploads'].each do |i|
-      run "rm -rf #{release_path}/public/images/#{i} && ln -s #{shared_path}/system/#{i} #{release_path}/public/images/#{i}"
     end
      #run "cd #{current_path} && bundle install"
   end

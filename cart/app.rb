@@ -5,7 +5,7 @@ module VQ
     register Padrino::Rendering
     register Padrino::Mailer
     register Padrino::Helpers
-    register BootstrapForms
+    #register BootstrapForms
 
     enable :sessions
 
