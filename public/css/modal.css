@@ -19,7 +19,7 @@
 .modal {
      display: none;
      position: absolute;
-     top: 36px;
+     top: 132px;
      color: #333;
      z-index:1002;
      overflow: auto;

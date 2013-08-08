@@ -403,6 +403,7 @@ body{
 	font-size: 35px;
 	color: #db0000;
 	text-align: center;
+	background-color: white;
 }
 .Producto .CantMas,.Producto .CantMenos{
 	width: 100%;

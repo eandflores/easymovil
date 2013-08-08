@@ -18,7 +18,7 @@
     <input value="Cambiar el piso flotante." type="button">
 </div>
 <ul id="Productos">
-    <li id="Producto1" class="Producto ProductoSelected">
+    <li id="Producto1" class="Producto">
         <a href="javascript:void(0)">
             <div class="Ticket"></div>
             <img src="/img/Producto1.png">
@@ -46,7 +46,7 @@
             </div>
         </a>
     </li>
-    <li id="Producto2" class="Producto">
+    <li id="Producto3" class="Producto">
         <a href="javascript:void(0)">
             <div class="Ticket"></div>
             <img src="/img/Producto2.png">
@@ -60,7 +60,7 @@
             </div>
         </a>
     </li>
-    <li id="Producto2" class="Producto">
+    <li id="Producto4" class="Producto">
         <a href="javascript:void(0)">
             <div class="Ticket"></div>
             <img src="/img/Producto2.png">
@@ -110,10 +110,11 @@
 </div>
 <script type="text/javascript">
     $('.Producto').click(function(){
-
         var id = $(this).attr('id');
         var altura = $('#wrapper').css('height');
 
+        $('li').removeClass('ProductoSelected');
+        $('#'+id).addClass('ProductoSelected');
         $('body').attr({'style' : 'border-top:0;'});
 
         $('#modal').attr({'style' : 'display:block;height:100%'});
