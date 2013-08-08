@@ -8,24 +8,15 @@
 
         <link href="css/reset.css" rel="stylesheet" media="all">
         <link href="css/bootstrap.css" rel="stylesheet" media="all">
-        <link href="css/main.css" rel="stylesheet" media="all"> 
+        <link href="css/main.css" rel="stylesheet" media="all">
+
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.numeric.js"></script>
+        <script src="js/bootstrap.js"></script>
     </head>
     <body>
         <div id="wrapper">
             <%= yield %>
         </div>
-        <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script type="text/javascript">
-            $('.Producto').click(function(){
-                var id = $(this).attr('id');
-                var altura = $('#wrapper').css('height');
-
-                $('#bodyModal').attr({'style' : 'border-top:0;'});
-
-                $('#modal').attr({'style' : 'display:block;height:100%'});
-                $('#fade').attr({'style' : 'display:block;height:'+altura+';'});
-            })
-        </script>
     </body>
 </html>

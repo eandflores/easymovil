@@ -12,5 +12,9 @@ VQ::Cart.controllers :home do
   get :productos, map: 'productos(/:id)' do
     render 'home/productos'
   end
+
+  get :compras, map: 'compras(/:id)' do
+    render 'home/compras'
+  end
   
 end

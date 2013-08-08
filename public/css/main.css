@@ -201,6 +201,7 @@ body{
 	height: 100%;
 }
 .Categoria a input{
+	padding-left: 10px;
 	float:                 left;
 	height:                60px;
 	width:                 89.1%;
@@ -278,6 +279,7 @@ body{
 	background: url(../img/CategoriaSelected.png);
 	background-size: 100% 100%;
 	border: solid 0.3px rgba(66, 0, 0, 0.5);
+	padding-left: 10px;
 }
 #CategoriaSelected input:hover{
 	cursor: default;
@@ -354,4 +356,92 @@ body{
 }
 /*----------------------------------------------------*/
 /*------------------ Fin Productos -------------------*/
+/*----------------------------------------------------*/
+
+/*----------------------------------------------------*/
+/*--------------------- Compras-----------------------*/
+/*----------------------------------------------------*/
+#Compras{
+	width:96%;
+	height:59px;
+	margin: 0 2% 0 2%;
+	background: url(../img/Compras.png);
+	background-size:100% 100%;
+}
+.Compras .DetalleProducto{
+	width: 56.8%;
+	height:161px;
+	font-size: 20.31px;
+}
+.Compras .DetalleProducto .Numero{
+	color:#db0000;
+	font-size: 16.59px;
+}
+.Compras .DetalleProducto .PrecioInternet{
+	font-size: 24.03px;
+}
+.Compras .DetalleProducto .PrecioNormal{
+	font-size: 16.59px;
+}
+.Producto .ContenedorCantidad{
+	float: left;
+	background: url(../img/Cantidad.png);
+	width:15.7%;
+	padding: 0 8px 0 8px;
+}
+.Producto .Cantidad{
+	width: 100%;
+	height: 47px;
+	float:left;
+	border:0;
+}
+.Producto .Cantidad input{
+	width:100%;
+	height: 100%;
+	float:left;
+	font-family: 'DINNextLTPro-Regular';
+	font-size: 35px;
+	color: #db0000;
+	text-align: center;
+}
+.Producto .CantMas,.Producto .CantMenos{
+	width: 100%;
+	height: 57px;
+	float:left;
+	border: 0;
+}
+#BarraInferior{
+	float:left;
+	width: 96%;
+	margin: 0 2% 0 2%;
+}
+#TotalInternet, #TotalNormal{
+	width: 33.3%;
+	height: 92px;
+	font-family: 'DINNextLTPro-Medium';
+	font-size: 29.17px;
+	color:#232323;
+	float: left;
+	line-height: 30px;
+	background: url(../img/FondoTotales.png);
+	background-size: 100% 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+#TotalInternet span, #TotalNormal span{
+	font-family: 'DINNextLTPro-Bold';
+	font-size: 37.5px;
+	color:#db0000;
+}
+#BarraInferior a{
+	float:left;
+	width: 33.4%;
+	height:92px;
+}
+#BarraInferior img{
+	width: 100%;
+	height: 100%;
+}
+/*----------------------------------------------------*/
+/*------------------- Fin Compras- -------------------*/
 /*----------------------------------------------------*/

@@ -1,0 +1,99 @@
+<div id="Logo">
+	<img src="img/Logo.png">
+</div>
+<div id="Compras" ></div>
+<ul id="Productos" class="Compras">
+	<li id="Producto1" class="Producto">
+		<img src="img/Producto1.png">
+		<div class="DetalleProducto">
+			<p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
+			<p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
+			<p class="Numero">816627</p>
+			<p>Valor Caja</p>
+			<p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
+			<p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
+		</div>
+		<div class="ContenedorCantidad">
+			<a class="CantMas" href="javascript:void(0)"></a>
+			<div class="Cantidad" >
+				<input name="Cantidad1" type="text" value="0" class="entero" disabled>
+			</div>
+			<a class="CantMenos" href="javascript:void(0)"></a>
+		</div>
+	</li>
+	<li id="Producto2" class="Producto">
+		<img src="img/Producto1.png">
+		<div class="DetalleProducto">
+			<p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
+			<p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
+			<p class="Numero">816627</p>
+			<p>Valor Caja</p>
+			<p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
+			<p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
+		</div>
+		<div class="ContenedorCantidad">
+			<a class="CantMas" href="javascript:void(0)"></a>
+			<div class="Cantidad" >
+				<input name="Cantidad2" type="text" value='0' class="entero" disabled>
+			</div>
+			<a class="CantMenos" href="javascript:void(0)"></a>
+		</div>
+	</li>
+	<li id="Producto3" class="Producto">
+		<img src="img/Producto1.png">
+		<div class="DetalleProducto">
+			<p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
+			<p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
+			<p class="Numero">816627</p>
+			<p>Valor Caja</p>
+			<p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
+			<p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
+		</div>
+		<div class="ContenedorCantidad">
+			<a class="CantMas" href="javascript:void(0)"></a>
+			<div class="Cantidad" >
+				<input name="Cantidad3" type="text" value='0' class="entero" disabled>
+			</div>
+			<a class="CantMenos" href="javascript:void(0)"></a>
+		</div>
+	</li>
+</ul>
+<div id="BarraInferior">
+	<div id="TotalInternet">
+		<p>Total Internet</p>
+		<p><span>$39.894</span></p>
+	</div>
+	<div id="TotalNormal">
+		<p>Total Internet</p>
+		<p><span>$44.328</span></p>
+	</div>
+	<a href="#"><img src="img/SiguienteFinal.png"></a>
+</div>
+</div>
+<script>
+    $(document).ready(function(){
+        $(".entero").numeric();
+    })
+
+    $('.CantMas').click(function(){
+    	var contenedor = $(this).parent();
+    	var input = contenedor.find("input");
+
+    	input.attr({
+    		'value' : parseInt(input.val())+1
+    	});
+    })
+
+    $('.CantMenos').click(function(){
+    	var contenedor = $(this).parent();
+    	var input = contenedor.find("input");
+
+    	var numero = parseInt(input.val())
+    	
+    	if(numero > 0){
+	    	input.attr({
+	    		'value' : parseInt(input.val())-1
+	    	});
+	    }
+    })
+</script>
