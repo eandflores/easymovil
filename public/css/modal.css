@@ -1,0 +1,106 @@
+/*----------------------------------------------------*/
+/*--------------------- Modal ------------------------*/
+/*----------------------------------------------------*/
+.overlay{
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     min-height: 1092px;
+     padding: 0 9.7% 0 9.7%;
+     background: #000;
+     background-size: 100% 100%;
+     z-index:1001;
+     opacity:.75;
+     -moz-opacity: 0.75;
+     filter: alpha(opacity=75);
+}
+.modal {
+     display: none;
+     position: absolute;
+     top: 36px;
+     color: #333;
+     z-index:1002;
+     overflow: auto;
+}
+#modal{
+	margin: auto;
+	width: 512px;
+}
+.wrapperModal #Logo{
+	padding: 14px 0 0 26.4%; /*169px*/
+}
+#modal img{
+	width: 100%;
+	height: 383px;
+	border: 1px solid black;
+}
+#modal .Producto{
+	margin: 0;
+	border:0;
+}
+#ContenedorModal{
+	background: url(../img/FondoModal.png);
+	background-size: 100% 100%;
+	text-decoration: underline;
+	padding-bottom: 10px;
+}
+.DetalleModal{
+	float:left;
+	height:      225px;
+	width:       100%;
+	font-family: 'DINNextLTPro-Regular';
+	font-size:   28.1px;
+	padding: 10px 0 0 10px;
+}
+.DetalleModal p{
+	text-decoration: underline;
+	float:left;
+	display: block;
+	width: 100%;
+	line-height: 35px;
+	margin: 0;
+	border: 0;
+	color: #232323;
+}
+.DetalleModal .Local{
+	font-family: 'DINNextLTPro-Bold';
+}
+.DetalleModal .Numero{
+	color:#db0000;
+	font-size: 23.41px;
+}
+.DetalleModal .PrecioInternet{
+	font-size: 32.78px;
+}
+.DetalleModal .PrecioNormal{
+	font-size: 23.41px;
+}
+.DetalleModal span{
+	color:#db0000;
+	font-family: 'DINNextLTPro-Bold';
+}
+#DescripcionSuperior, #DescripcionInferior{
+	padding: 10px 0 0 10px;
+	font-family: 'DINNextLTPro-Regular';
+	font-size: 23.41px;
+}
+#DescripcionSuperior span{
+	font-family: 'DINNextLTPro-Bold';
+	color:#db0000;
+}
+#DescripcionSuperior li{
+	list-style-type: disc;
+	list-style-position: inside;
+}
+#DescripcionInferior{
+	margin:0;
+}
+#DescripcionInferior .Ultimo{
+	padding-top: 20px;
+}
+/*----------------------------------------------------*/
+/*-------------------Fin Modal -----------------------*/
+/*----------------------------------------------------*/
+

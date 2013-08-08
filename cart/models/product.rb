@@ -20,11 +20,5 @@ class Product
 
     belongs_to :category, required: false
     belongs_to :subcategory, required: false
-    has n, :cart_products
-
-    #propios de Sunset
-    property :es_tabla,         Boolean, default: false
-    property :categorias_tabla, String
-    property :is_roll,          Boolean, default: true
 
 end

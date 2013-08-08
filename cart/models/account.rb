@@ -22,9 +22,6 @@ class Account
   property :address_detail,   Text
   
 
-  has n, :cart
-  belongs_to :sector, required: false
-
 
   # Validations
   validates_presence_of      :email, :role
