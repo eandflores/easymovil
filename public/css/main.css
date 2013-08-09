@@ -4,7 +4,6 @@
 *{ padding: 0; margin:0; border:0;}
 
 body{
-
 	border-top: 5px solid #ad0000;
 	background: url(../img/Fondo.png);
 	-webkit-background-size: 100%; 
@@ -17,7 +16,6 @@ body{
     background-size: cover;
 }
 #wrapper{
-	overflow: hidden;
 	margin: auto;	
 	width: 640px;
 	min-height: 1092px;
@@ -294,17 +292,17 @@ body{
 	margin-top: 2px;
 	width:100%;
 }
-.Producto a{
+.Producto .Check{
 	float: left;
 	height:161px;
-	width:100%;
+	width:10.9%;
 }
 .Producto .Ticket{
 	background: url(../img/TicketGrande.png);
 	background-size: 100% 100%;
 	float:left;
 	height:100%;
-	width:10.9%;
+	width:100%;
 }
 .Producto img{
 	float:left;
@@ -357,6 +355,102 @@ body{
 /*----------------------------------------------------*/
 /*------------------ Fin Productos -------------------*/
 /*----------------------------------------------------*/
+
+/*----------------------------------------------------*/
+/*--------------------- Modal ------------------------*/
+/*----------------------------------------------------*/
+#modal{
+	margin: 35px 2% 35px 2%;
+	width: 96%;
+}
+#modal #Cerrar{
+	position: absolute;
+	margin: auto;	
+	width: 614px;
+	height:50px;
+}
+#modal #Cerrar a{
+	float:right;
+	width: 8.1%;
+	height:50px;
+	background: url(../img/Cerrar.png);
+}
+.wrapperModal #Logo{
+	padding: 14px 0 0 26.4%; /*169px*/
+}
+#modal img{
+	width: 100%;
+	height: 383px;
+	border: 1px solid black;
+}
+#modal .Producto{
+	margin: 0;
+	border:0;
+}
+#ContenedorModal{
+	background: url(../img/FondoModal.png);
+	background-size: 100% 100%;
+	text-decoration: underline;
+	padding-bottom: 10px;
+}
+.DetalleModal{
+	float:left;
+	height:      225px;
+	width:       100%;
+	font-family: 'DINNextLTPro-Regular';
+	font-size:   28.1px;
+	padding: 10px 0 0 10px;
+}
+.DetalleModal p{
+	text-decoration: underline;
+	float:left;
+	display: block;
+	width: 100%;
+	line-height: 35px;
+	margin: 0;
+	border: 0;
+	color: #232323;
+}
+.DetalleModal .Local{
+	font-family: 'DINNextLTPro-Bold';
+}
+.DetalleModal .Numero{
+	color:#db0000;
+	font-size: 23.41px;
+}
+.DetalleModal .PrecioInternet{
+	font-size: 32.78px;
+}
+.DetalleModal .PrecioNormal{
+	font-size: 23.41px;
+}
+.DetalleModal span{
+	color:#db0000;
+	font-family: 'DINNextLTPro-Bold';
+}
+#DescripcionSuperior, #DescripcionInferior{
+	padding: 10px 0 0 10px;
+	font-family: 'DINNextLTPro-Regular';
+	font-size: 23.41px;
+}
+#DescripcionSuperior span{
+	font-family: 'DINNextLTPro-Bold';
+	color:#db0000;
+}
+#DescripcionSuperior li{
+	list-style-type: disc;
+	list-style-position: inside;
+}
+#DescripcionInferior{
+	margin:0;
+}
+#DescripcionInferior .Ultimo{
+	padding-top: 20px;
+}
+/*----------------------------------------------------*/
+/*-------------------Fin Modal -----------------------*/
+/*----------------------------------------------------*/
+
 
 /*----------------------------------------------------*/
 /*--------------------- Compras-----------------------*/
