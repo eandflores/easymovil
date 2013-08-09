@@ -1,4 +1,4 @@
-@media (max-width: 640px) { 
+@media (max-device-width: 767px){ 
 /*----------------------------------------------------*/
 /*-------------------- Sección General ---------------*/
 /*----------------------------------------------------*/
@@ -20,6 +20,9 @@ body{
 	margin: auto;	
 	width: 640px;
 	min-height: 1092px;
+}
+#BordeInferior{
+	display: none;
 }
 #Logo{
 	width: 100%;
@@ -163,6 +166,9 @@ body{
 	height:          102px;
 	background:      url(../img/Signup.png);
 	background-size: 100% 100%;
+}
+#Signup p{
+	display: none;
 }
 #Signup a{
 	display:      block;
