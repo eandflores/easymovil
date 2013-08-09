@@ -35,6 +35,11 @@ body{
 	width:   29%; /*380px*/
 	height:  208px;
 }
+.ImagenIndex{
+	height: 393px;
+	width: 89.3%;
+	margin-left: 5.35%;
+}
 /*----------------------------------------------------*/
 /*-------------- Fin Seccion General -----------------*/
 /*----------------------------------------------------*/
@@ -43,13 +48,8 @@ body{
 /*----------------------------------------------------*/
 /*---------------------- Index -----------------------*/
 /*----------------------------------------------------*/
-#ImagenIndex{
-	height: 393px;
-	width: 89.3%;
-	margin-left: 5.35%;
-	margin-bottom: 40px;
-}
 #Login{
+	margin-top: 40px;
 	margin-left:     24.4%;
 	margin-right:    24.4%;
 	width:           51.2%;
@@ -198,31 +198,39 @@ body{
 /*----------------------------------------------------*/
 /*-------------------- Categorias --------------------*/
 /*----------------------------------------------------*/
+.Seleccion{
+	width: 89.3%;
+	height:50px;
+	margin-left: 5.35%;
+	background: url(../img/SeleccionProducto.png);
+	background-size: 100% 100%;
+	margin-bottom: 42px;
+}
 #Categorias{
 	float:  left;
-	margin: 0 2% 0 2%;
+	margin: 0 11.2% 0 11.2%;
 }
 .Categoria{
-	width: 		   100%;
+	width: 		   50%;
 	float:         left;
-	margin-bottom: 7px;
+	margin-bottom: 10px;
 }
 .Categoria a{
 	float:  left;
-	width:  100%;
-	height: 60px;
+	width:  95%;
+	height: 38px;
 }
 .Categoria a img{
 	float:  left;
-	width:  10.9%;
+	width:  11%;
 	height: 100%;
 }
 .Categoria a input{
 	padding-left: 10px;
 	float:                 left;
-	height:                60px;
-	width:                 89.1%;
-	font-size:             33.3px;
+	height:                38px;
+	width:                 89%;
+	font-size:             22.1px;
 	color:                 #232323;
 	line-height:           0;
 	text-align:            left;
