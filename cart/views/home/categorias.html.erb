@@ -1,65 +1,14 @@
 <div id="Logo">
         <img src="/img/Logo.png">
 </div>
+
 <ul id="Categorias">
-    <li id="Categoria1" class="Categoria">
-        <a href="<%= url(:home, :productos) %>">
+    <% @categorias.each do |c| %>
+    <li id="Categoria<%=c.id%>" class="Categoria">
+        <a href="<%= url(:home, :productos, c.id) %>">
             <img src="/img/Ticket.png">
-            <input value="Cambiar el piso flotante." type="button">
+            <input value="<%= c.name %>" type="button">
         </a>                    
     </li>
-    <li id="Categoria2" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Cambiar las cortinas." type="button">
-        </a>
-    </li>
-    <li id="Categoria3" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Instalar un soporte para el LCD." type="button">
-        </a>
-    </li>
-    <li id="Categoria4" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Instalar un rac nuevo." type="button">
-        </a>
-    </li>
-    <li id="Categoria5" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Renovar to dormitorio." type="button">
-        </a>
-    </li>
-    <li id="Categoria6" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Decorar el baño." type="button">
-        </a>
-    </li>
-    <li id="Categoria7" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Cambiar la vieja vajilla." type="button">
-        </a>
-    </li>
-    <li id="Categoria8" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Comprar cubrecamas nuevos." type="button">
-        </a>
-    </li>
-    <li id="Categoria9" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input value="Reparar los estragos del invierno." type="button">
-        </a>
-    </li>
-    <li id="Categoria10" class="Categoria">
-        <a href="">
-            <img src="/img/Ticket.png">
-            <input  value="Cambiar los antiguos enchufes." type="button">
-        </a>
-    </li>
+    <% end %>
 </ul>

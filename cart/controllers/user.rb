@@ -13,7 +13,11 @@ VQ::Cart.controllers :user do
         flash[:notice] = "Conectado correctamente"
 
         #@user.attributes.to_json
-        redirect url('/')
+        if @user.blank?
+            redirect url('/')
+        else
+            redirect url(:home, :categorias)
+        end
     end
 
     get :facebook_callback_failed, :map => "/auth/failure" do

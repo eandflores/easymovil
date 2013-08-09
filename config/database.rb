@@ -13,7 +13,7 @@ DataMapper.logger = logger
 DataMapper::Property::String.length(255)
 
 case Padrino.env
-  when :development then DataMapper.setup(:default, "mysql://root:@localhost/sunsetsushi_dev")
+  when :development then DataMapper.setup(:default, "mysql://root:@localhost/easymovil_dev")
   when :production  then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "sunset_sushi_web_production.db"))
   when :test        then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "sunset_sushi_web_test.db"))
 end
