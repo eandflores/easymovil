@@ -11,6 +11,7 @@ module VQ
 
     set :fb_id,         '491170457643546'
     set :fb_scope,      'email,user_birthday,read_stream'
+    set :tw_id,         'vu08afBLuO0IhopBfIX4Q'
     set :email,         'contacto@sunsetsushidelivery.cl'
     set :banco,         'Banco de Chile'
     set :tipo_cuenta,   'Corriente'
@@ -22,6 +23,7 @@ module VQ
 
     use OmniAuth::Builder do
         provider :facebook, VQ::Cart.fb_id, '1d719d758d98e974628cc31e30762b14', :scope => VQ::Cart.fb_scope
+        provider :twitter, VQ::Cart.tw_id, 'ZUf1YJ0ccvqj67h3xT30cfNqpFSeB9iBdA1ZDPIE'
     end
 
     ##

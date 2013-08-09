@@ -34,6 +34,7 @@ gem 'dm-ar-finders'
 gem 'mini_magick'
 gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 
 

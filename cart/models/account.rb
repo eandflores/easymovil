@@ -56,7 +56,7 @@ class Account
     Account.first(:uid=>uid)
   end
 
-  def self.new_from_omniauth(omniauth)
+  def self.new_from_omniauth(omniauth, provider = 'facebook')
 
     user          = Account.find_by_email(omniauth["info"]["email"])
     user          = Account.new if user.blank?
@@ -66,7 +66,7 @@ class Account
     user.name     = omniauth["info"]["first_name"]
     user.surname  = omniauth["info"]["last_name"]
     user.email    = omniauth["info"]["email"]
-    user.provider = "facebook"
+    user.provider = provider
     user.link     = omniauth["info"]["urls"]["Facebook"]
     user.gender   = omniauth["extra"]["raw_info"]["gender"]
     user.picture  = omniauth["info"]["image"]
