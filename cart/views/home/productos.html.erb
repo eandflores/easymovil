@@ -21,68 +21,13 @@
 <% end %>
 
 <ul id="Productos">
-<<<<<<< HEAD
-    <li id="Producto1" class="Producto">
-        <a href="javascript:void(0)" class="Check">
-            <div class="Ticket"></div>
-        </a>
-        <a href="<%= url(:home, :producto) %>">
-            <img src="/img/Producto1.png">
-            <div class="DetalleProducto">
-                <p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
-                <p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
-                <p class="Numero">816627</p>
-                <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
-            </div>
-        </a>
-    </li>
-    <li id="Producto2" class="Producto">
-        <a href="javascript:void(0)" class="Check">
-            <div class="Ticket"></div>
-        </a>
-        <a href="<%= url(:home, :producto) %>">
-            <img src="/img/Producto2.png">
-            <div class="DetalleProducto">
-                <p class="Especificacion">Piso flotante 8mm 2,4m2 1ST Loc</p>
-                <p class="Local">Portofino. - KAINDL</p>
-                <p class="Numero">816636</p>
-                <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span>$12.938 (-10%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span>$14.376</span></p>
-            </div>
-        </a>
-    </li>
-    <li id="Producto3" class="Producto">
-        <a href="javascript:void(0)" class="Check">
-            <div class="Ticket"></div>
-        </a>
-        <a href="<%= url(:home, :producto) %>">
-            <img src="/img/Producto2.png">
-            <div class="DetalleProducto">
-                <p class="Especificacion">Piso flotante 8mm 2,4m2 1ST Loc</p>
-                <p class="Local">Portofino. - KAINDL</p>
-                <p class="Numero">816636</p>
-                <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span>$12.938 (-10%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span>$14.376</span></p>
-            </div>
-        </a>
-    </li>
-    <li id="Producto4" class="Producto">
-        <a href="javascript:void(0)" class="Check">
-            <div class="Ticket"></div>
-        </a>
-        <a href="<%= url(:home, :producto) %>">
-            <img src="/img/Producto2.png">
-=======
     <% @productos.each do |i| %>
     <li id="Producto<%= i.id %>" class="Producto">
-        <a href="javascript:void(0)">
+        <a href="javascript:void(0)" class="Check">
             <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>">
             <img src="<%= i.image_url %>" />
->>>>>>> 47f34a955afa5458dac150e40c52ff5604071f6f
             <div class="DetalleProducto">
                 <p class="Especificacion"><%= i.name %></p>
                 <p class="Local"><%= i.local %></p>
