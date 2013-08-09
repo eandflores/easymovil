@@ -19,11 +19,21 @@ VQ::Cart.controllers :home do
   end
 
   get :compras, map: 'compras(/:id)' do
+    productos = Product.all id: session[:cart].map{|x| x[:id]}
+    @data = []
+    productos.each do |x|
+      tmp = session[:cart].select{|y| y[:id].to_i == x.id}
+
+      @data << x.attributes.merge( {quantity: tmp.blank? ? 1 : tmp.first[:quantity]} )
+    end
+
     render 'home/compras'
   end
 
   get :producto, map: 'producto(/:id)' do
     render 'home/producto'
   end
+
+
   
 end
