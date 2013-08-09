@@ -1,0 +1,110 @@
+<link href="/css/modal.css" rel="stylesheet" media="all"> 
+<div id="Logo">
+    <img src="/img/Logo.png">
+</div>
+<div id="NavBar">
+    <a id="Atras" href="<%= url(:home, :categorias) %>">
+        <img src="/img/Atras.png">
+    </a>
+    <a id="Inicio" href="/">
+        <img src="/img/Inicio.png">
+    </a>
+    <a id="Siguiente" href="<%= url(:home, :compras) %>">
+        <img src="/img/Siguiente.png">
+    </a>
+</div>
+<% unless @categoria.blank? %>
+<div id="CategoriaSelected" >
+    <img src="/img/Ticket.png">
+    <input value="<%= @categoria.name %>" type="button">
+</div>
+<% end %>
+
+<ul id="Productos">
+<<<<<<< HEAD
+    <li id="Producto1" class="Producto">
+        <a href="javascript:void(0)" class="Check">
+            <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>">
+            <img src="/img/Producto1.png">
+            <div class="DetalleProducto">
+                <p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
+                <p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
+                <p class="Numero">816627</p>
+                <p>Valor Caja</p>
+                <p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
+                <p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
+            </div>
+        </a>
+    </li>
+    <li id="Producto2" class="Producto">
+        <a href="javascript:void(0)" class="Check">
+            <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>">
+            <img src="/img/Producto2.png">
+            <div class="DetalleProducto">
+                <p class="Especificacion">Piso flotante 8mm 2,4m2 1ST Loc</p>
+                <p class="Local">Portofino. - KAINDL</p>
+                <p class="Numero">816636</p>
+                <p>Valor Caja</p>
+                <p class="PrecioInternet">Internet <span>$12.938 (-10%)</span></p>
+                <p class="PrecioNormal"> Precio Normal <span>$14.376</span></p>
+            </div>
+        </a>
+    </li>
+    <li id="Producto3" class="Producto">
+        <a href="javascript:void(0)" class="Check">
+            <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>">
+            <img src="/img/Producto2.png">
+            <div class="DetalleProducto">
+                <p class="Especificacion">Piso flotante 8mm 2,4m2 1ST Loc</p>
+                <p class="Local">Portofino. - KAINDL</p>
+                <p class="Numero">816636</p>
+                <p>Valor Caja</p>
+                <p class="PrecioInternet">Internet <span>$12.938 (-10%)</span></p>
+                <p class="PrecioNormal"> Precio Normal <span>$14.376</span></p>
+            </div>
+        </a>
+    </li>
+    <li id="Producto4" class="Producto">
+        <a href="javascript:void(0)" class="Check">
+            <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>">
+            <img src="/img/Producto2.png">
+=======
+    <% @productos.each do |i| %>
+    <li id="Producto<%= i.id %>" class="Producto">
+        <a href="javascript:void(0)">
+            <div class="Ticket"></div>
+            <img src="<%= i.image_url %>" />
+>>>>>>> 47f34a955afa5458dac150e40c52ff5604071f6f
+            <div class="DetalleProducto">
+                <p class="Especificacion"><%= i.name %></p>
+                <p class="Local"><%= i.local %></p>
+                <p class="Numero"><%= i.number %></p>
+                <p>Valor Caja</p>
+                <p class="PrecioInternet">Internet <span><%= number_to_currency i.price %> (-<%= (100-(i.price*100.0)/i.normal_price).round %>%)</span></p>
+                <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i.normal_price %></span></p>
+            </div>
+        </a>
+    </li>
+    <% end %>
+</ul>
+</div>
+<script type="text/javascript">
+    $('.Producto .Check').click(function(){
+        var id = $(this).parent().attr('id');
+
+        $('#'+id).addClass('ProductoSelected');
+
+        //var altura = $('#wrapper').css('height');
+        //$('body').attr({'style' : 'border-top:0;'});
+        //$('#modal').attr({'style' : 'display:block;height:'+altura+';'});
+        //$('#fade').attr({'style' : 'display:block;height:'+altura+';'});
+    })
+</script>
