@@ -6,7 +6,7 @@ class Product
     property :id,           Serial
     property :name,         String, required: true
     property :slug,         String
-    property :description,  Text
+    property :description,  Text, lazy: false
     property :price,        Integer, default: 0
     property :normal_price, Integer, default: 0
     property :counter,      Integer, default: 0

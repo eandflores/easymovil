@@ -22,7 +22,7 @@
 
 <ul id="Productos">
     <% @productos.each do |i| %>
-    <li id="Producto<%= i.id %>" class="Producto">
+    <li id="Producto_<%= i.id %>" class="Producto">
         <a href="javascript:void(0)" class="Check">
             <div class="Ticket"></div>
         </a>
@@ -46,6 +46,8 @@
         var id = $(this).parent().attr('id');
 
         $('#'+id).addClass('ProductoSelected');
+        var p_id = id.split("_")[1];
+        $.get("<%= url(:api, :add_cart) %>/"+p_id);
 
         //var altura = $('#wrapper').css('height');
         //$('body').attr({'style' : 'border-top:0;'});
