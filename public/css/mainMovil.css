@@ -415,8 +415,12 @@ body{
 #modal .Producto{
 	margin: 0;
 	border:0;
+	height: 100%;
+	float: left;
 }
 #ContenedorModal{
+	height: 100%;
+	float: left;
 	background: url(../img/FondoModal.png);
 	background-size: 100% 100%;
 	text-decoration: underline;
