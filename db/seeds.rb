@@ -31,16 +31,20 @@
 
 # shell.say "---- INIT SEEDS ----".red
 
-c = Category.create name: 'Cambiar las cortinas.', position: 1
+c = Category.create name: 'Cambiar piso', position: 1
 Product.create name: 'Piso flotante 8mm 2,40m2 1S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto1.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 2S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto2.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 3S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto1.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 4S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto2.png'
-c = Category.create name: 'Instalar un soporte para el LCD.', position: 2
-c = Category.create name: 'Instalar un rac nuevo.', position: 3
-c = Category.create name: 'Renovar to dormitorio.', position: 4
-c = Category.create name: 'Decorar el baño.', position: 5
-c = Category.create name: 'Cambiar la vieja vajilla.', position: 6
-c = Category.create name: 'Comprar cubrecamas nuevos.', position: 7
-c = Category.create name: 'Reparar los estragos del invierno.', position: 8
-c = Category.create name: 'Cambiar los antiguos enchufes.', position: 9
+c = Category.create name: 'Remodelar el baño', position: 2
+c = Category.create name: 'Remodelar la terraza', position: 3
+c = Category.create name: 'Pintar la casa', position: 4
+c = Category.create name: 'Remodelar el baño', position: 5
+c = Category.create name: 'Cambiar muebles de cocina', position: 6
+c = Category.create name: 'Cambiar alfombras de la casa', position: 7
+c = Category.create name: 'Cambiar ropa de cama', position: 8
+c = Category.create name: 'Remodelar cortinas', position: 9
+c = Category.create name: 'Cambiar menaje', position: 10
+c = Category.create name: 'Remodelación línea blanca', position: 11
+c = Category.create name: 'Cambiar lámparas de la casa', position: 12
+c = Category.create name: 'Cambiar muebles de la casa', position: 12
