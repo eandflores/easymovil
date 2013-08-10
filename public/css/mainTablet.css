@@ -505,32 +505,64 @@ body{
 /*--------------------- Compras-----------------------*/
 /*----------------------------------------------------*/
 #Compras{
-	width:96%;
-	height:59px;
-	margin: 0 2% 0 2%;
-	background: url(../img/Compras.png);
+	width:89.3%;
+	height:50px;
+	margin: 0 5.3% 0 5.3%;
+	background: url(../img/Compras2.png);
 	background-size:100% 100%;
+	margin-bottom: 11px;
 }
+#Productos2{
+	float:left;
+	width:89.3%;
+	margin: 0 5.3% 20px 5.3%;
+}
+#Productos2 img{
+	width:13.2%;
+	height:123px;
+}
+
 .Compras .DetalleProducto{
-	width: 56.8%;
-	height:161px;
-	font-size: 20.31px;
+	width: 72.5%;
+	height:123px;
+	font-size: 18px;
+}
+.Compras .DetalleProducto p{
+	line-height: 20px;
+}
+.Compras .DetalleProducto .Especificacion{
+	display: none;
+}
+.Compras .DetalleProducto .Local{
+	display:none;
+}
+.Compras .Especificacion-Local{
+	float:left;
+	font-size: 18px;
+}
+.Compras .Especificacion-Local span{
+	color: black;
+	font-weight: bold;
 }
 .Compras .DetalleProducto .Numero{
 	color:#db0000;
-	font-size: 16.59px;
+	font-size: 14.2px;
 }
 .Compras .DetalleProducto .PrecioInternet{
-	font-size: 24.03px;
+	font-size: 24px;
 }
 .Compras .DetalleProducto .PrecioNormal{
-	font-size: 16.59px;
+	font-size: 18px;
 }
 .Producto .ContenedorCantidad{
 	float: left;
-	background: url(../img/Cantidad.png);
-	width:15.7%;
-	padding: 0 8px 0 8px;
+	background: url(../img/Cantidad2.png);
+	background-size: 100% 100%;
+	width:9%;
+	height: 123px;
+	margin-left: 2.5%;
+	margin-left: 2.5%;
+	padding: 0 13px 0 13px;
 }
 .Producto .Cantidad{
 	width: 100%;
@@ -550,37 +582,40 @@ body{
 }
 .Producto .CantMas,.Producto .CantMenos{
 	width: 100%;
-	height: 57px;
+	height: 38px;
 	float:left;
 	border: 0;
 }
 #BarraInferior{
 	float:left;
-	width: 96%;
-	margin: 0 2% 0 2%;
+	width: 82.8%;
+	margin: 0 0 0 13.5%;
+}
+#BarraInferior .Movil{
+	display:none;
 }
 #TotalInternet, #TotalNormal{
-	width: 33.3%;
-	height: 92px;
+	width: 32.2%;
+	height: 49px;
 	font-family: 'DINNextLTPro-Medium';
-	font-size: 29.17px;
+	font-size: 24px;
 	color:#232323;
 	float: left;
 	line-height: 30px;
-	background: url(../img/FondoTotales.png);
+	background: url(../img/FondoPreciosTablet.png);
 	background-size: 100% 100%;
 	text-align: center;
 	padding-top: 10px;
 }
 #TotalInternet span, #TotalNormal span{
 	font-family: 'DINNextLTPro-Bold';
-	font-size: 37.5px;
+	font-size: 24px;
 	color:#db0000;
 }
 #BarraInferior a{
 	float:left;
-	width: 33.4%;
-	height:92px;
+	width: 32.2%;
+	height:49px;
 }
 #BarraInferior img{
 	width: 100%;

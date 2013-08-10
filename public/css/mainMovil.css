@@ -2,11 +2,7 @@
 /*----------------------------------------------------*/
 /*-------------------- Sección General ---------------*/
 /*----------------------------------------------------*/
-html{ 
-	padding: 0; 
-	margin:0; 
-	border:0;
-}
+*{ padding: 0; margin:0; border:0;}
 
 body{
 	border-top: 5px solid #ad0000;
@@ -307,11 +303,17 @@ body{
 	width:100%;
 	padding: 0 2% 0 2%;
 }
+#Productos2{
+	float:left;
+	width:100%;
+	padding: 0 2% 0 2%;
+}
 .Producto{
 	float:left;
 	margin-top: 2px;
 	width:100%;
 }
+
 .Producto .Check{
 	float: left;
 	height:161px;
@@ -489,6 +491,9 @@ body{
 	height:161px;
 	font-size: 20.31px;
 }
+.Compras .Especificacion-Local{
+	display: none;
+}
 .Compras .DetalleProducto .Numero{
 	color:#db0000;
 	font-size: 16.59px;
@@ -532,6 +537,9 @@ body{
 	width: 96%;
 	margin: 0 2% 0 2%;
 }
+#BarraInferior .Tablet{
+	display:none;
+}
 #TotalInternet, #TotalNormal{
 	width: 33.3%;
 	height: 92px;
@@ -544,6 +552,7 @@ body{
 	background-size: 100% 100%;
 	text-align: center;
 	padding-top: 10px;
+	border:0;
 }
 #TotalInternet span, #TotalNormal span{
 	font-family: 'DINNextLTPro-Bold';

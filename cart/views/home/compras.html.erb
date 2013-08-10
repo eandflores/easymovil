@@ -6,13 +6,14 @@
 	precio_internet = 0 
 	precio_normal = 0
 %>
-<ul id="Productos" class="Compras">
+<ul id="Productos2" class="Compras">
 	<% @data.each do |i| %>
 		<li id="Producto_<%= i[:id] %>" class="Producto">
 			<img src="<%= i[:image_url] %>">
 			<div class="DetalleProducto">
                 <p class="Especificacion"><%= i[:name] %></p>
                 <p class="Local"><%= i[:local] %></p>
+                <p class="Especificacion-Local"><%= i[:name]+" / "%> <span><%= i[:local] %></span></p>
                 <p class="Numero"><%= i[:number] %></p>
                 <p>Valor Caja</p>
                 <% 
@@ -34,14 +35,17 @@
 </ul>
 <div id="BarraInferior">
 	<div id="TotalInternet">
-		<p>Total Internet</p>
-		<p><span><%= number_to_currency precio_internet %></span></p>
+		<p class="Movil">Total Internet</p>
+		<p class="Movil"><span><%= number_to_currency precio_internet %></span></p>
+		<p class="Tablet">Total Internet <span><%= number_to_currency precio_internet %></span></p>
 	</div>
 	<div id="TotalNormal">
-		<p>Total Normal</p>
-		<p><span><%= number_to_currency precio_normal %></span></p>
+		<p class="Movil">Total Normal</p>
+		<p class="Movil"><span><%= number_to_currency precio_normal %></span></p>
+		<p class="Tablet">Total Normal <span><%= number_to_currency precio_normal %></span></p>
 	</div>
-	<a href="#"><img src="img/SiguienteFinal.png"></a>
+	<a href="#" class="Movil"><img src="img/SiguienteFinal.png"></a>
+	<a href="#" class="Tablet"><img src="img/Seguir2.png"></a>
 </div>
 </div>
 <script>
