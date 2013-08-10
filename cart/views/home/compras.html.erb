@@ -41,12 +41,48 @@
 		<p>Total Normal</p>
 		<p><span><%= number_to_currency precio_normal %></span></p>
 	</div>
-	<a href="#"><img src="img/SiguienteFinal.png"></a>
+	<a id="btn_comprar" href="javascript:void()"><img src="img/SiguienteFinal.png"></a>
 </div>
 </div>
 <script>
+    function comprar(e)
+    {
+        e.preventDefault();
+        // ESTA ES LA PARTE DONDE HAY QUE TENER CUIDADO,
+        // HAY QUE GUARDAR EN ID EL ID QUE USA EASY PARA LOS PRODUCTOS.
+        // ES EL PARÁMETRO ID_PROD DE LA URL DE UN PRODUCTO:
+        // http://www.easy.cl/easy/ProductDisplay?mundo=1&id_prod=156828
+        <% 
+            str_inserta = ""
+            @data.each_with_index do |i, k|
+                str_inserta << "&id_prod_#{k}=#{i[:number]}&cantidad_l#{k}=#{i[:quantity]}"
+            end 
+            str_inserta << "&max_productos=#{@data.count}"
+        %>
+        $.ajax({
+                url: '//www.easy.cl/easy/ShowInfoCarro',
+                data: 'INSERTA=<%= str_inserta%>',
+                cache: false,
+
+                    // LOS DATOS TIENEN QUE SALIR EN JSONP PARA PERMITIR EL CROSS-DOMAIN
+                dataType: 'jsonp',
+                success: function () {
+                    // ACCIONES PARA EL ÉXITO. NO SE USA.
+                },
+                error: function (a,b,c) {
+                       // EL SCRIPT SIEMPRE VA A ARROJAR ERROR, PORQUE LOS DATOS
+                    // NO VUELVEN EN JSON. HAY QUE USAR EL ERROR COMO CALLBACK
+                    // PARA CONFIRMAR EL ÉXITO DE LA INYECCIÓN
+                    
+                    window.location = "http://www.easy.cl";
+                    
+                }
+            });
+
+    }
     $(document).ready(function(){
         $(".entero").numeric();
+        $('#btn_comprar').click(comprar);
     })
 
     $('.CantMas').click(function(){
