@@ -409,13 +409,15 @@ body{
 /*--------------------- Modal ------------------------*/
 /*----------------------------------------------------*/
 #modal{
-	margin: 35px 2% 35px 2%;
-	width: 96%;
+	float:left;
+	padding-top: 115px;
+	margin: 0 26.35% 115px 26.35%;
+	width: 47.3%;
 }
 #modal #Cerrar{
 	position: absolute;
 	margin: auto;	
-	width: 614px;
+	width: 500px;
 	height:50px;
 }
 #modal #Cerrar a{
@@ -442,12 +444,15 @@ body{
 	text-decoration: underline;
 	padding-bottom: 10px;
 }
+#ContenedorModal .Movil{
+	display:none;
+}
 .DetalleModal{
 	float:left;
 	height:      225px;
 	width:       100%;
 	font-family: 'DINNextLTPro-Regular';
-	font-size:   28.1px;
+	font-size:   19.4px;;
 	padding: 10px 0 0 10px;
 }
 .DetalleModal p{
@@ -461,26 +466,29 @@ body{
 	color: #232323;
 }
 .DetalleModal .Local{
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro';
+	font-weight: bold;
 }
 .DetalleModal .Numero{
 	color:#db0000;
-	font-size: 23.41px;
+	font-size: 16.17px;
 }
 .DetalleModal .PrecioInternet{
-	font-size: 32.78px;
+	font-family: 'DINNextLTPro';
+	font-size: 22.63px;
 }
 .DetalleModal .PrecioNormal{
-	font-size: 23.41px;
+	font-size: 16.17px;
 }
 .DetalleModal span{
 	color:#db0000;
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro';
+	font-weight: bold;
 }
 #DescripcionSuperior, #DescripcionInferior{
 	padding: 10px 0 0 10px;
 	font-family: 'DINNextLTPro-Regular';
-	font-size: 23.41px;
+	font-size: 19.4px;
 }
 #DescripcionSuperior span{
 	font-family: 'DINNextLTPro-Bold';
@@ -522,13 +530,15 @@ body{
 	height:123px;
 }
 
-.Compras .DetalleProducto{
+#Producto2 .Compras .DetalleProducto{
 	width: 72.5%;
 	height:123px;
 	font-size: 18px;
+	font-family: 'DINNextLTPro-Regular';
 }
-.Compras .DetalleProducto p{
+#Producto2 .Compras .DetalleProducto p{
 	line-height: 20px;
+	font-family: 'DINNextLTPro-Regular';
 }
 .Compras .DetalleProducto .Especificacion{
 	display: none;
@@ -539,20 +549,24 @@ body{
 .Compras .Especificacion-Local{
 	float:left;
 	font-size: 18px;
+	font-family: 'DINNextLTPro-Regular';
 }
 .Compras .Especificacion-Local span{
 	color: black;
 	font-weight: bold;
 }
-.Compras .DetalleProducto .Numero{
+#Producto2 .Compras .DetalleProducto .Numero{
 	color:#db0000;
 	font-size: 14.2px;
+	font-family: 'DINNextLTPro-Regular';
 }
-.Compras .DetalleProducto .PrecioInternet{
+#Producto2 .Compras .DetalleProducto .PrecioInternet{
 	font-size: 24px;
+	font-family: 'DINNextLTPro-Regular';
 }
-.Compras .DetalleProducto .PrecioNormal{
+#Producto2 .Compras .DetalleProducto .PrecioNormal{
 	font-size: 18px;
+	font-family: 'DINNextLTPro-Regular';
 }
 .Producto .ContenedorCantidad{
 	float: left;
