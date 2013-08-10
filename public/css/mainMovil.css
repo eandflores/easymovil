@@ -1,4 +1,4 @@
-@media (max-device-width: 767px){ 
+@media (max-device-width: 639px){ 
 /*----------------------------------------------------*/
 /*-------------------- Sección General ---------------*/
 /*----------------------------------------------------*/
@@ -33,7 +33,7 @@ body{
 	width:   80.7%; /*380px*/
 	height:  360px;
 }
-#ImagenIndex{
+.ImagenIndex{
 	display: none;
 }
 /*----------------------------------------------------*/
@@ -239,6 +239,9 @@ body{
 	width:100%;
 	padding: 0 2% 20px 2%;
 }
+#NavBar input{
+	display:none;
+}
 #Atras{
 	float:left;
 	height: 94px;
@@ -342,7 +345,8 @@ body{
 	color: #232323;
 }
 .DetalleProducto .Local{
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro-Regular';
+	font-weight: bold;
 }
 .DetalleProducto .Numero{
 	color:#db0000;
@@ -356,7 +360,8 @@ body{
 }
 .DetalleProducto span{
 	color:#db0000;
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro-Regular';
+	font-weight: bold;
 }
 .ProductoSelected .DetalleProducto{
 	background:  rgba(255, 130, 130, 0.95);

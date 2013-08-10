@@ -1,4 +1,4 @@
-@media (min-device-width: 769px){ /*----------------------------------------------------*/
+@media (min-device-width: 640px){ /*----------------------------------------------------*/
 /*-------------------- Sección General ---------------*/
 /*----------------------------------------------------*/
 *{ padding: 0; margin:0; border:0;}
@@ -250,24 +250,37 @@ body{
 /*----------------------------------------------------*/
 #NavBar{
 	float: left;
-	width:100%;
-	padding: 0 2% 20px 2%;
+	width:89.3%;
+	margin: 0 5.3% 20px 5.3%;
 }
 #Atras{
 	float:left;
-	height: 94px;
-	width:  33%;
+	height: 50px;
+	width:  12.7%;
 	background: url(../img/Atras.png);
 	background-size: 100% 100%;
 }
 #Siguiente{
 	float:left;
-	height: 94px;
-	width:  33%;
+	height: 50px;
+	width:  12.7%;
 	background: url(../img/Siguiente.png);
 	background-size: 100% 100%;
 }
+#NavBar input{
+	float:left;
+	width: 74.6%;
+	height:50px;
+	font-size: 20.98px;
+	color: #ffffff;
+	line-height: 0;
+	text-align: center;
+	font-family: 'DINNextLTPro-Regular';
+	background: url(../img/CategoriaSelected2.png);
+	background-size: 100% 100%;
+}
 #Inicio{
+	display:none;
 	float:left;
 	height: 94px;
 	width:  34%;
@@ -279,6 +292,7 @@ body{
 	height: 100%;
 }
 #CategoriaSelected{
+	display:none;
 	float: left;
 	padding: 0 2% 0 2%;
 	width: 100%;
@@ -311,18 +325,19 @@ body{
 }
 #Productos{
 	float:left;
-	width:100%;
-	padding: 0 2% 0 2%;
+	width:68%;
+	margin: 0 16% 0 16%;
 }
 .Producto{
 	float:left;
 	margin-top: 2px;
 	width:100%;
+	height:121px;
 }
 .Producto .Check{
 	float: left;
-	height:161px;
-	width:10.9%;
+	height:121px;
+	width:7%;
 }
 .Producto .Ticket{
 	background: url(../img/TicketGrande.png);
@@ -334,14 +349,19 @@ body{
 .Producto img{
 	float:left;
 	height:100%;
-	width:27.3%;
+	width:17.8%;
+}
+.Detalle{
+	display: block;
+	width:100%;
+	height: 100%;
 }
 .DetalleProducto{
 	float:       left;
 	height:      100%;
-	width:       61.8%;
+	width:       75.2%;
 	font-family: 'DINNextLTPro-Regular';
-	font-size:   22.31px;
+	font-size:   17px;
 	background:  rgba(255, 255, 255, 0.6);
 	border:      solid 1px rgba(66, 0, 0, 0.3);
 	padding: 10px 0 0 10px;
@@ -350,27 +370,29 @@ body{
 	float:left;
 	display: block;
 	width: 100%;
-	line-height: 25px;
+	line-height: 18px;
 	margin: 0;
 	border: 0;
 	color: #232323;
 }
 .DetalleProducto .Local{
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro-Regular';
+	font-weight: bold;
 }
 .DetalleProducto .Numero{
 	color:#db0000;
-	font-size: 18.59px;
+	font-size: 14.2px;
 }
 .DetalleProducto .PrecioInternet{
-	font-size: 26.03px;
+	font-size: 19.8px;
 }
 .DetalleProducto .PrecioNormal{
-	font-size: 18.59px;
+	font-size: 14.21px;
 }
 .DetalleProducto span{
 	color:#db0000;
-	font-family: 'DINNextLTPro-Bold';
+	font-family: 'DINNextLTPro-Regular';
+	font-weight: bold;
 }
 .ProductoSelected .DetalleProducto{
 	background:  rgba(255, 130, 130, 0.95);

@@ -8,6 +8,9 @@
     <a id="Inicio" href="/">
         <img src="/img/Inicio.png">
     </a>
+    <% unless @categoria.blank? %>
+        <input value="<%= @categoria.name %>" type="button">
+    <% end %>
     <a id="Siguiente" href="<%= url(:home, :compras) %>">
         <img src="/img/Siguiente.png">
     </a>
@@ -25,7 +28,7 @@
             <a href="javascript:void(0)" class="Check">
                 <div class="Ticket"></div>
             </a>
-            <a href="<%= url(:home, :producto) %>">
+            <a href="<%= url(:home, :producto) %>" class="Detalle">
                 <img src="<%= i.image_url %>" />
                 <div class="DetalleProducto">
                     <p class="Especificacion"><%= i.name %></p>
