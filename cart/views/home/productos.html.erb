@@ -1,4 +1,3 @@
-<link href="/css/modal.css" rel="stylesheet" media="all"> 
 <div id="Logo">
     <img src="/img/Logo.png">
 </div>
@@ -14,30 +13,30 @@
     </a>
 </div>
 <% unless @categoria.blank? %>
-<div id="CategoriaSelected" >
-    <img src="/img/Ticket.png">
-    <input value="<%= @categoria.name %>" type="button">
-</div>
+    <div id="CategoriaSelected" >
+        <img src="/img/Ticket.png">
+        <input value="<%= @categoria.name %>" type="button">
+    </div>
 <% end %>
 
 <ul id="Productos">
     <% @productos.each do |i| %>
-    <li id="Producto_<%= i.id %>" class="Producto">
-        <a href="javascript:void(0)" class="Check">
-            <div class="Ticket"></div>
-        </a>
-        <a href="<%= url(:home, :producto) %>">
-            <img src="<%= i.image_url %>" />
-            <div class="DetalleProducto">
-                <p class="Especificacion"><%= i.name %></p>
-                <p class="Local"><%= i.local %></p>
-                <p class="Numero"><%= i.number %></p>
-                <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span><%= number_to_currency i.price %> (-<%= (100-(i.price*100.0)/i.normal_price).round %>%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i.normal_price %></span></p>
-            </div>
-        </a>
-    </li>
+        <li id="Producto<%= i.id %>" class="Producto">
+            <a href="javascript:void(0)" class="Check">
+                <div class="Ticket"></div>
+            </a>
+            <a href="<%= url(:home, :producto) %>">
+                <img src="<%= i.image_url %>" />
+                <div class="DetalleProducto">
+                    <p class="Especificacion"><%= i.name %></p>
+                    <p class="Local"><%= i.local %></p>
+                    <p class="Numero"><%= i.number %></p>
+                    <p>Valor Caja</p>
+                    <p class="PrecioInternet">Internet <span><%= number_to_currency i.price %> (-<%= (100-(i.price*100.0)/i.normal_price).round %>%)</span></p>
+                    <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i.normal_price %></span></p>
+                </div>
+            </a>
+        </li>
     <% end %>
 </ul>
 </div>

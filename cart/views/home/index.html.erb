@@ -1,6 +1,7 @@
 <div id="Logo">
     <img src="/img/Logo.png">
 </div>
+<img src="img/ImagenIndex.png" class="ImagenIndex">
 <form action="/login" method="post">
     <%= csrf_token_field %>
     <div id="Login">
@@ -10,8 +11,7 @@
             <input type="text" id="inputCorreo" name="correo" placeholder="ejemplo@mail.com" required>
             <div id="Fila2">
                 <label id="labelContraseña" class="control-label" for="inputContraseña">Contraseña</label>
-                <input type="password" id="inputContraseña" name="password" placeholder="* * * * * * * *"required>
-            </div>
+                <input type="password" id="inputContraseña" name="password" placeholder="* * * * * * * *" required>
         </div>
 
         <div id="Borde-Right"></div>
@@ -27,6 +27,7 @@
 </div>
 <div id="Signup">
     <a href="<%= url(:home, :registrar) %>"><img src="/img/Registro.png"></a>
+    <p>¿No estás Registrado?</p>
 </div>
 
 <script type="text/javascript">
@@ -36,3 +37,4 @@
         })
     })
 </script>
+
