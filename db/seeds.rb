@@ -31,12 +31,17 @@
 
 # shell.say "---- INIT SEEDS ----".red
 
+def ui(codigo)
+    "http://www.easy.cl/EASYFO_IMGS/img/productos/grande/#{codigo}.jpg"
+end
+
 c = Category.create name: 'Cambiar piso', position: 1
 Product.create name: 'Piso flotante 8mm 2,40m2 1S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto1.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 2S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto2.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 3S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto1.png'
 Product.create name: 'Piso flotante 8mm 2,40m2 4S', local: 'Loc Haya piemonte. - EUROFLOOR', number: 816627, price: 11858, normal_price: 13176, category: c, image_url: '/img/Producto2.png'
 c = Category.create name: 'Remodelar el baño', position: 2
+Product.create name: 'SALA DE BAÑO OLYMPUS', price: 39990, normal_price: 42990, category: c, image_url: ui(713264)
 c = Category.create name: 'Remodelar la terraza', position: 3
 c = Category.create name: 'Pintar la casa', position: 4
 c = Category.create name: 'Remodelar el baño', position: 5

@@ -6,11 +6,13 @@ VQ::Cart.controllers :api do
     get :add_cart, map: 'add(/:id)' do
         
         session[:cart] = [] if session[:cart].blank?
+
+        logger.info "Cart: #{session[:cart].inspect}"
         
         unless params[:id].blank?
             exists = false
             session[:cart].each_with_index do |i, k|
-                if i[:id].to_i.eql? params[:id]
+                if i[:id].eql? params[:id]
                     session[:cart][k][:quantity] += 1
                     exists = true
                 end
@@ -28,7 +30,7 @@ VQ::Cart.controllers :api do
         
         unless params[:id].blank?
             session[:cart].each_with_index do |i, k|
-                if i[:id].to_i.eql? params[:id].to_i
+                if i[:id].eql? params[:id].to_i
                     session[:cart][k][:quantity] -= 1
                     if session[:cart][k][:quantity] == 0
                         session[:cart].delete_at k
