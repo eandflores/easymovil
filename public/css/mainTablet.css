@@ -178,6 +178,7 @@ body{
 
 }
 #Signup p{
+	display: none;
 	float:right;
 	font-family: 'DINNextLTPro-Regular';
 	font-size:21px;
@@ -189,7 +190,7 @@ body{
 }
 #Signup a{
 	float:right;
-	display:      block;
+	display:      none;
 	float:        right;
 	margin-top:   12px;
 	margin-right: 56px;
@@ -420,13 +421,13 @@ body{
 #modal{
 	float:left;
 	padding-top: 115px;
-	margin: 0 26.35% 115px 26.35%;
-	width: 47.3%;
+	margin: 0 16.35% 115px 16.35%;
+	width: 67.3%;
 }
 #modal #Cerrar{
 	position: absolute;
 	margin: auto;	
-	width: 500px;
+	width: 730px;
 	height:50px;
 }
 #modal #Cerrar a{
@@ -446,12 +447,16 @@ body{
 #modal .Producto{
 	margin: 0;
 	border:0;
+	float:left;
+	height: 100%;
 }
 #ContenedorModal{
 	background: url(../img/FondoModal.png);
 	background-size: 100% 100%;
 	text-decoration: underline;
 	padding-bottom: 10px;
+	height: 100%;
+	float: left;
 }
 #ContenedorModal .Movil{
 	display:none;
