@@ -28,7 +28,7 @@
             <a href="javascript:void(0)" class="Check">
                 <div class="Ticket"></div>
             </a>
-            <a href="<%= url(:home, :producto) %>" class="Detalle">
+            <a href="<%= url(:home, :producto) %>/<%=i.id%>" class="Detalle">
                 <img src="<%= i.image_url %>" />
                 <div class="DetalleProducto">
                     <p class="Especificacion"><%= i.name %></p>

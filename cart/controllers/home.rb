@@ -31,6 +31,7 @@ VQ::Cart.controllers :home do
   end
 
   get :producto, map: 'producto(/:id)' do
+    @producto = Product.get params[:id]
     render 'home/producto'
   end
 

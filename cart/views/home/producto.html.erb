@@ -2,19 +2,19 @@
     <div id="Cerrar">
         <a href="javascript:history.back(1)"></a>
     </div>
-    <img src="/img/Producto1.png">
+    <img src="<%= @producto.image_url %>">
     <div id="ContenedorModal">
         <div class="Producto">
             <div class="DetalleModal">
-                <p class="Especificacion">Piso flotante 8mm 2,40m2 3S</p>
-                <p class="Local">Loc Haya piemonte. - EUROFLOOR</p>
-                <p class="Numero">816627</p>
+                <p class="Especificacion"><%= @producto.name %></p>
+                <p class="Local"><%= @producto.local %></p>
+                <p class="Numero"><%= @producto.number %></p>
                 <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span>$11.858 (-10%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span>$13.176</span></p>
+                <p class="PrecioInternet">Internet <span><%= number_to_currency @producto.price %> (-<%= (100-(@producto.price*100.0)/@producto.normal_price).round %>%)</span></p>
+                <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency @producto.normal_price %></span></p>
             </div>
         </div>
-        <ul id="DescripcionSuperior">
+<!--         <ul id="DescripcionSuperior">
             <span>Descripción</span>
             <li id="Descripcion1">Piso flotante foto laminado.</li>
             <li id="Descripcion2">Sistema Loc (sin pegamento).</li>
@@ -29,7 +29,8 @@
             <li class="Medidas">Material: Aglomerado enchapado foto laminado.</li>
             <li class="Medidas">Origen: Austria.</li>
             <li class="Medidas Ultimo">Tamaño para despacho: Pequeño.</li>
-        </ul>
+        </ul> -->
+        <%= @producto.description %>
     </div>
 </div>
 <script type="text/javascript">
