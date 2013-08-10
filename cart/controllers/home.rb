@@ -34,6 +34,20 @@ VQ::Cart.controllers :home do
     render 'home/producto'
   end
 
+  get :registrar, map: 'registrar' do
+    render 'home/registrar'
+  end
 
-  
+  post :registrar, map: 'registrar' do
+    debe_registrar = false
+
+    @user = Account.authenticate params[:email], params[:password]
+    debe_registrar = true if @user.blank?
+    if debe_registrar == false
+      @user = Account.new email: params[:email], password: params[:password]
+      @user.save
+    end
+    redirect url(:home, :categorias)
+  end
+
 end

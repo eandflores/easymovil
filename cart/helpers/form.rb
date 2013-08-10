@@ -28,5 +28,10 @@ VQ::Cart.helpers do
         }
 
     end
+    def csrf_token_field(token = nil)
+    if defined?(session) && token  ||= session[:csrf]
+      hidden_field_tag :authenticity_token, :value => session[:csrf]
+    end
+  end
     
 end

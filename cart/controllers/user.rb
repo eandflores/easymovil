@@ -51,6 +51,17 @@ VQ::Cart.controllers :user do
         redirect url("/")
     end
 
+    post :login, map: 'login' do
+        @user = Account.authenticate params[:email], params[:password]
+
+        if @user.blank?
+            redirect url(:home, :registrar)
+        else
+            redirect url(:home, :categorias)
+        end
+
+    end
+
     get :logout, map: 'logout' do
         session.clear
 
