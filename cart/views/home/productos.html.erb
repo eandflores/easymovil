@@ -24,11 +24,11 @@
 
 <ul id="Productos">
     <% @productos.each do |i| %>
-        <li id="Producto_<%= i.id %>" class="Producto">
+        <li id="Producto_<%= i.id %>" class="Producto<%= cart_has_product(i.id) ? ' ProductoSelected' : '' %>">
             <a href="javascript:void(0)" class="Check">
                 <div class="Ticket"></div>
             </a>
-            <a href="<%= url(:home, :producto) %>" class="Detalle">
+            <a href="<%= url(:home, :producto) %>/<%=i.id%>" class="Detalle">
                 <img src="<%= i.image_url %>" />
                 <div class="DetalleProducto">
                     <p class="Especificacion"><%= i.name %></p>
@@ -46,10 +46,19 @@
 <script type="text/javascript">
     $('.Producto .Check').click(function(){
         var id = $(this).parent().attr('id');
-
-        $('#'+id).addClass('ProductoSelected');
         var p_id = id.split("_")[1];
-        $.get("<%= url(:api, :add_cart) %>/"+p_id);
+        if( !$('#'+id).hasClass('ProductoSelected') )
+        {
+            $.get("<%= url(:api, :add_cart) %>/"+p_id);
+            $('#'+id).addClass('ProductoSelected');
+        }
+        else
+        {
+            $.get("<%= url(:api, :del_cart) %>/"+p_id);
+            $('#'+id).removeClass('ProductoSelected');   
+        }
+        
+        
 
         //var altura = $('#wrapper').css('height');
         //$('body').attr({'style' : 'border-top:0;'});

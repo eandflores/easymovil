@@ -7,10 +7,11 @@ set :use_sudo, false
 #set :password, 'dpconce.q1w2e3'
 
 
-# role :web, "root@10.1.1.6"
-# role :app, "root@10.1.1.6"
-role :web, "root@198.211.117.245"                          # Your HTTP server, Apache/etc
-role :app, "root@198.211.117.245"                         # This may be the same as your `Web` server
+set :port, 1295
+role :web, "root@playdigital.cl"
+role :app, "root@playdigital.cl"
+# role :web, "root@198.211.117.245"                          # Your HTTP server, Apache/etc
+# role :app, "root@198.211.117.245"                         # This may be the same as your `Web` server
 
 set :stage, 'development'
 
@@ -21,7 +22,7 @@ set :rvm_ruby_string, '1.9.3'
 
 require "rvm/capistrano"
 
-set :deploy_to, "/mnt/sites/easymovil"
+set :deploy_to, "/home/playdigi/public_html/mesdelhogar/checklist"
 set :current_path, "#{deploy_to}/current"
 set :releases_path, "#{deploy_to}/releases"
 set :shared_path, "#{deploy_to}/shared"
