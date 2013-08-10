@@ -2,7 +2,10 @@
 /*-------------------- Sección General ---------------*/
 /*----------------------------------------------------*/
 *{ padding: 0; margin:0; border:0;}
-
+/* commented backslash hack \*/ 
+html, body{height:98%;} 
+/* end hack */
+html,body {margin:0;padding:0}
 body{
 	border-top: 5px solid #f20000;
 	background: url(../img/FondoGrande.png);
@@ -15,15 +18,17 @@ body{
     -o-background-size: cover; 
     background-size: cover;
 }
+#SignupMovil {display: none;}
 #BordeInferior{
 	width:100%;
-	height: 65px;
+	height: 75px;
 	background-color: #f20000;
 }
 #wrapper{
 	margin: auto;	
 	width: 1075px;
-	min-height: 1012px;
+	/*min-height: 1012px;*/
+	min-height:100%;
 	background: url(../img/FondoBlanco.png);
 	background-size: 100% 100%;
 }
@@ -167,6 +172,10 @@ body{
 #Social1{
 	margin-left: 24.3%;
 	margin-right: 2.6%;
+}
+#Signup 
+{
+
 }
 #Signup p{
 	float:right;
