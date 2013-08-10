@@ -19,7 +19,7 @@ VQ::Cart.controllers :api do
                 session[:cart] << {id: params[:id], quantity: 1}
             end
         end
-
+        
         {status: 'ok'}.to_json
     end
 

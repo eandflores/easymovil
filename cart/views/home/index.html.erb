@@ -5,15 +5,14 @@
 <form action="/login" method="post">
     <%= csrf_token_field %>
     <div id="Login">
-        
         <div id="Textos">
             <label id="labelCorreo" class="control-label" for="inputCorreo">Correo</label>
             <input type="text" id="inputCorreo" name="correo" placeholder="ejemplo@mail.com" required>
             <div id="Fila2">
                 <label id="labelContraseña" class="control-label" for="inputContraseña">Contraseña</label>
                 <input type="password" id="inputContraseña" name="password" placeholder="* * * * * * * *" required>
+            </div>
         </div>
-
         <div id="Borde-Right"></div>
     </div>
     <div id="Signin">
