@@ -12,8 +12,10 @@
     <img src="<%= i[:image_url] %>">
     <div class="DetalleProducto">
         <p class="Especificacion"><%= i[:name] %></p>
-        <p class="Local"><%= i[:local] %></p>
-        <p class="Especificacion-Local"><%= i[:name]+" / "%> <span><%= i[:local] %></span></p>
+        <% unless i[:local].blank? %>
+            <p class="Local"><%= i[:local] %></p>
+        <% end %>
+        <!-- <p class="Especificacion-Local"><span><%= i[:local] %></span></p> -->
         <p class="Numero"><%= i[:number] %></p>
         <p>Valor Caja</p>
         <% unless i[:price].blank? %>
