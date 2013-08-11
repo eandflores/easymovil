@@ -30,7 +30,7 @@ VQ::Cart.controllers :api do
         
         unless params[:id].blank?
             session[:cart].each_with_index do |i, k|
-                if i[:id].eql? params[:id].to_i
+                if i[:id].eql? params[:id]
                     session[:cart][k][:quantity] -= 1
                     if session[:cart][k][:quantity] == 0
                         session[:cart].delete_at k
