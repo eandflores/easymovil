@@ -393,6 +393,10 @@ body{
 	color:#db0000;
 	font-size: 14.2px;
 }
+.PrecioReferencia
+{
+	font-size: 12px;
+}
 .DetalleProducto .PrecioInternet{
 	font-size: 19.8px;
 }

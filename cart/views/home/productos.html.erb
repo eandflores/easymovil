@@ -5,7 +5,7 @@
     <a id="Atras" href="<%= url(:home, :categorias) %>">
         <img src="/img/Atras.png">
     </a>
-    <a id="Inicio" href="/">
+    <a id="Inicio" href="<%= url(:home, :categorias) %>">
         <img src="/img/Inicio.png">
     </a>
     <% unless @categoria.blank? %>

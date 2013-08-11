@@ -317,6 +317,15 @@ body{
 	float:left;
 	margin-top: 2px;
 	width:100%;
+	height: 161px;
+}
+.ProductoCajaImagen
+{
+	background-color: white; height: 161px; width: 140px; float: left
+}
+.ProductoCajaImagen img
+{
+	margin-top: 25px;
 }
 
 .Producto .Check{
@@ -334,7 +343,8 @@ body{
 .Producto img{
 	float:left;
 	/*height:100%;*/
-	width:27.3%;
+	/*width:27.3%;*/
+	width: 100%;
 }
 .DetalleProducto{
 	float:       left;
@@ -362,6 +372,11 @@ body{
 .DetalleProducto .Numero{
 	color:#db0000;
 	font-size: 18.59px;
+}
+.PrecioReferencia
+{
+	font-size: 10px;
+
 }
 .DetalleProducto .PrecioInternet{
 	font-size: 26.03px;

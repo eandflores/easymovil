@@ -9,7 +9,9 @@
         </a>
         <a href="<%= url(:home, :producto) %>/<%=i[:id] %>" class="Detalle">
     <% end %>
-    <img src="<%= i[:image_url] %>">
+    <div class="ProductoCajaImagen">
+        <img src="<%= i[:image_url] %>">
+    </div>
     <div class="DetalleProducto">
         <p class="Especificacion"><%= i[:name] %></p>
         <% unless i[:local].blank? %>
@@ -29,6 +31,7 @@
         <% unless i[:normal_price].blank? %>
             <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i[:normal_price] %></span></p>
         <% end %>
+        <p class="PrecioReferencia">*Precio de referencia</p>
     </div>
     <% if is_cart %>
         <div class="ContenedorCantidad">
