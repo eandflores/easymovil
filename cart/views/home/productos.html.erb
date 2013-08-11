@@ -24,22 +24,36 @@
 
 <ul id="Productos">
     <% @productos.each do |i| %>
+        <%= partial 'home/product', locals: {item: i} %>
+        <!-- 
         <li id="Producto_<%= i.id %>" class="Producto<%= cart_has_product(i.id) ? ' ProductoSelected' : '' %>">
             <a href="javascript:void(0)" class="Check">
                 <div class="Ticket"></div>
             </a>
             <a href="<%= url(:home, :producto) %>/<%=i.id%>" class="Detalle">
+
                 <img src="<%= i.image_url %>" />
                 <div class="DetalleProducto">
                     <p class="Especificacion"><%= i.name %></p>
                     <p class="Local"><%= i.local %></p>
                     <p class="Numero"><%= i.number %></p>
                     <p>Valor Caja</p>
-                    <p class="PrecioInternet">Internet <span><%= number_to_currency i.price %> (-<%= (100-(i.price*100.0)/i.normal_price).round %>%)</span></p>
-                    <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i.normal_price %></span></p>
+                    <% unless i.price.blank? %>
+                        <p class="PrecioInternet">
+                            Internet 
+                                <span><%= number_to_currency i.price %> 
+                                    <% unless i.normal_price.blank? %>
+                                        (-<%= (100-(i.price*100.0)/i.normal_price).round %>%)
+                                    <% end %>
+                                </span>
+                        </p>
+                    <% end %>
+                    <% unless i.normal_price.blank? %>
+                        <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i.normal_price %></span></p>
+                    <% end %>
                 </div>
             </a>
-        </li>
+        </li> -->
     <% end %>
 </ul>
 </div>

@@ -47,6 +47,7 @@ end
 
 # Padrino Stable Gem
 gem 'padrino', '~> 0.11.0'
+gem 'roo'
 # gem 'padrino_bootstrap_forms', git: 'https://github.com/avillagran/padrino_bootstrap_forms.git', require: 'bootstrap_forms'
 
 

@@ -7,12 +7,24 @@
         <div class="Producto">
             <div class="DetalleModal">
                 <p class="Especificacion Movil"><%= @producto.name %></p>
-                <p class="Local Movil"><%= @producto.local %></p>
+                <% unless @producto.local.blank? %>
+                    <p class="Local Movil"><%= @producto.local %></p>
+                <% end %>
                 <p class="Local Tablet"><%= @producto.name %> / <%= @producto.name %></p>
                 <p class="Numero"><%= @producto.number %></p>
                 <p>Valor Caja</p>
-                <p class="PrecioInternet">Internet <span><%= number_to_currency @producto.price %> (-<%= (100-(@producto.price*100.0)/@producto.normal_price).round %>%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency @producto.normal_price %></span></p>
+                <% unless @producto.price.blank? %>
+                <p class="PrecioInternet">Internet 
+                    <span><%= number_to_currency @producto.price %> 
+                        <% unless @producto.normal_price.blank? %>
+                            (-<%= (100-(@producto.price*100.0)/@producto.normal_price).round %>%)
+                        <% end %>
+                        </span>
+                </p>
+                <% end %>
+                <% unless @producto.normal_price.blank? %>
+                    <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency @producto.normal_price %></span></p>
+                <% end %>
             </div>
         </div>
 <!--         <ul id="DescripcionSuperior">

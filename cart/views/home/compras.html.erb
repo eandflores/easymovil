@@ -8,29 +8,11 @@
 %>
 <ul id="Productos2" class="Compras">
 	<% @data.each do |i| %>
-		<li id="Producto_<%= i[:id] %>" class="Producto">
-			<img src="<%= i[:image_url] %>">
-			<div class="DetalleProducto">
-                <p class="Especificacion"><%= i[:name] %></p>
-                <p class="Local"><%= i[:local] %></p>
-                <p class="Especificacion-Local"><%= i[:name]+" / "%> <span><%= i[:local] %></span></p>
-                <p class="Numero"><%= i[:number] %></p>
-                <p>Valor Caja</p>
-                <% 
-                	precio_internet += i[:price] * i[:quantity]
-                	precio_normal += i[:normal_price] * i[:quantity]
-                %>
-                <p class="PrecioInternet">Internet <span><%= number_to_currency i[:price] %> (-<%= (100-(i[:price]*100.0)/i[:normal_price]).round %>%)</span></p>
-                <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i[:normal_price] %></span></p>
-            </div>
-			<div class="ContenedorCantidad">
-				<a class="CantMas" href="javascript:void(0)"></a>
-				<div class="Cantidad" >
-					<input name="Cantidad1" type="text" value="<%= i[:quantity] %>" class="entero" disabled>
-				</div>
-				<a class="CantMenos" href="javascript:void(0)"></a>
-			</div>
-		</li>
+        <% 
+            precio_internet += (i[:price].blank? ? i[:normal_price] : i[:price]) * i[:quantity]
+            precio_normal   += (i[:normal_price].blank? ? i[:price] : i[:normal_price] ) * i[:quantity]
+        %>
+		<%= partial 'home/product', locals: {item: i, is_cart: true} %>
 	<% end %>
 </ul>
 <div id="BarraInferior">

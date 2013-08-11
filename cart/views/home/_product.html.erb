@@ -1,0 +1,42 @@
+<% 
+    i = (item.class == Product) ? item.attributes : item 
+    is_cart = false unless defined?(is_cart)
+%>
+<li id="Producto_<%= i[:id] %>" class="Producto<%= cart_has_product(i[:id]) ? ' ProductoSelected' : '' %>">
+    <% unless is_cart %>
+        <a href="javascript:void(0)" class="Check">
+            <div class="Ticket"></div>
+        </a>
+        <a href="<%= url(:home, :producto) %>/<%=i[:id] %>" class="Detalle">
+    <% end %>
+    <img src="<%= i[:image_url] %>">
+    <div class="DetalleProducto">
+        <p class="Especificacion"><%= i[:name] %></p>
+        <p class="Local"><%= i[:local] %></p>
+        <p class="Especificacion-Local"><%= i[:name]+" / "%> <span><%= i[:local] %></span></p>
+        <p class="Numero"><%= i[:number] %></p>
+        <p>Valor Caja</p>
+        <% unless i[:price].blank? %>
+        <p class="PrecioInternet">
+            Internet 
+            <span><%= number_to_currency i[:price] %> 
+            <% unless i[:normal_price].blank? %>
+                (-<%= (100-(i[:price]*100.0)/i[:normal_price]).round %>%)</span></p>
+            <% end %>
+        <% end %>
+        <% unless i[:normal_price].blank? %>
+            <p class="PrecioNormal"> Precio Normal <span><%= number_to_currency i[:normal_price] %></span></p>
+        <% end %>
+    </div>
+    <% if is_cart %>
+        <div class="ContenedorCantidad">
+            <a class="CantMas" href="javascript:void(0)"></a>
+            <div class="Cantidad" >
+                <input name="Cantidad1" type="text" value="<%= i[:quantity] %>" class="entero" disabled>
+            </div>
+            <a class="CantMenos" href="javascript:void(0)"></a>
+        </div>
+    <% else %>
+        </a>
+    <% end %>
+</li>
