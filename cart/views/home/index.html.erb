@@ -2,6 +2,7 @@
     <img src="/img/Logo.png">
 </div>
 <img src="img/ImagenIndex.png" class="ImagenIndex">
+<% if false %>
 <form action="/login" method="post">
     <%= csrf_token_field %>
     <div id="Login">
@@ -19,15 +20,20 @@
         <a href="javascript:void(0)"><img src="/img/Entrar.png"></a>
     </div>
 </form>
+<% end %>
 <div id="Social">
+    <% if false %>
     <p>¿No puedes acceder a tu cuenta?</p>
+    <% end %>
     <a id="Social1" href="/auth/facebook"><img src="/img/Facebook.png"></a>
     <a href="/auth/twitter"><img src="/img/Twitter.png"></a>
 </div>
+<% if false %>
 <div id="SignupMovil">
     <a href="<%= url(:home, :registrar) %>"><img src="/img/Registro.png"></a>
     <p>¿No estás Registrado?</p>
 </div>
+<% end %>
 
 <script type="text/javascript">
     $('document').ready(function(){

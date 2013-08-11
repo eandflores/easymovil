@@ -500,6 +500,10 @@ body{
 	color: #db0000;
 	text-align: center;
 	background-color: white;
+
+}
+.Producto .Cantidad input:disabled {
+	opacity: 1;
 }
 .Producto .CantMas,.Producto .CantMenos{
 	width: 100%;
