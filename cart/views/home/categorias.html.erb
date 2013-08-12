@@ -3,6 +3,9 @@
 </div>
 <img src="img/ImagenIndex.png" class="ImagenIndex">
 <div class="Seleccion"></div>
+
+<%= partial 'buscador/form' %>
+
 <ul id="Categorias">
     <% @categorias.each do |c| %>
     <li id="Categoria<%=c.id%>" class="Categoria">

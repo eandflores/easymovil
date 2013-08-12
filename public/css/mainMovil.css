@@ -41,6 +41,19 @@ body{
 .ImagenIndex{
 	display: none;
 }
+
+#buscador {height: 57px; margin: 0 25px 38px; position:relative; display: block; background: #e3dcc9; border-radius: 8px; box-shadow: rgba(0,0,0,.36) 0 7px 8px, rgba(194,167,141,.8) 0 -4px 3px inset, rgba(255,255,255,1) 0 2px 2px inset;
+background: #f9f4ee; /* Old browsers */
+background: -moz-linear-gradient(top,  #f9f4ee 0%, #dbd4bc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f4ee), color-stop(100%,#dbd4bc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f9f4ee 0%,#dbd4bc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f9f4ee 0%,#dbd4bc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f9f4ee 0%,#dbd4bc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f9f4ee 0%,#dbd4bc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f4ee', endColorstr='#dbd4bc',GradientType=0 ); /* IE6-9 */	
+}
+#buscador .query {height: 35px; background: #fff; border-radius: 4px; margin: 10px 23px; font-size: 24px;  width: 485px; padding: 5px 10px; box-shadow: rgba(182,153,125,.45) 0 -2px 2px, rgba(255,255,255,1) 0 2px 2px;}
+#buscador .send {position: absolute; right: 23px; top: 10px;}
 /*----------------------------------------------------*/
 /*-------------- Fin Seccion General -----------------*/
 /*----------------------------------------------------*/
