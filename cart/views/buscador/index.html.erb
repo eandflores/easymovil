@@ -1,0 +1,56 @@
+<div id="Logo">
+    <img src="/img/Logo.png">
+</div>
+<div id="buscador">
+    <input value="<%= params[:q] %>" />
+</div>
+<div id="NavBar">
+    <a id="Atras" href="<%= url(:home, :categorias) %>">
+        <img src="/img/Atras.png">
+    </a>
+    <a id="Inicio" href="<%= url(:home, :categorias) %>">
+        <img src="/img/Inicio.png">
+    </a>
+    
+    <input value="<%= params[:q] %>" type="button">
+    
+    <a id="Siguiente" href="<%= url(:home, :compras) %>">
+        <img src="/img/Siguiente.png">
+    </a>
+</div>
+<% unless @categoria.blank? %>
+    <div id="CategoriaSelected" >
+        <img src="/img/Ticket.png">
+        <input value="<%= @categoria.name %>" type="button">
+    </div>
+<% end %>
+
+<ul id="Productos">
+    <% @items.each do |i| %>
+        <%= partial 'home/product', locals: {item: i} %>
+    <% end %>
+</ul>
+</div>
+<script type="text/javascript">
+    $('.Producto .Check').click(function(){
+        var id = $(this).parent().attr('id');
+        var p_id = id.split("_")[1];
+        if( !$('#'+id).hasClass('ProductoSelected') )
+        {
+            $.get("<%= url(:api, :add_cart) %>/"+p_id);
+            $('#'+id).addClass('ProductoSelected');
+        }
+        else
+        {
+            $.get("<%= url(:api, :del_cart) %>/"+p_id);
+            $('#'+id).removeClass('ProductoSelected');   
+        }
+        
+        
+
+        //var altura = $('#wrapper').css('height');
+        //$('body').attr({'style' : 'border-top:0;'});
+        //$('#modal').attr({'style' : 'display:block;height:'+altura+';'});
+        //$('#fade').attr({'style' : 'display:block;height:'+altura+';'});
+    })
+</script>
