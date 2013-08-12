@@ -9,6 +9,7 @@ html, body{height:98%;}
 html,body {margin:0;padding:0}
 
 body{
+	font-family: 'Maven Pro', sans-serif;
 	border-top: 5px solid #ad0000;
 	background: url(../img/Fondo.png);
 	-webkit-background-size: 100%; 
@@ -71,7 +72,6 @@ body{
 	padding-left: 2.5%;
 	margin:  0;
 	color:   #232323;
-	font-family:      'DINNextLTPro-Regular';
 }
 #Textos #labelCorreo{
 	float:            left;
@@ -88,7 +88,6 @@ body{
 	float:       left;
 	width:       60%;
 	height:      50%;	
-	font-family: 'DINNextLTPro-Regular';
 	border: none;
 	border-top:2px solid #8b8b8b;
 }
@@ -106,7 +105,6 @@ body{
 	border-radius: 0 0 0 10px;
 	-moz-border-radius: 0 0 0 10px;
 	-webkit-border-radius: 0 0 0 10px;
-	font-family: 'DINNextLTPro-Ultralight';
 	border-left: 2px solid #8b8b8b;
 	border-bottom: 2px solid #8b8b8b;
 }
@@ -148,7 +146,6 @@ body{
 	/*padding:      0.08cm 0.7cm 0.49cm 0.7cm;*/
 	height:         79px;
 	width:          100%;
-	font-family:    'DINNextLTPro-Regular';
 	font-size:      33.3px;
 	text-align:     center;
 }
@@ -225,11 +222,22 @@ body{
 	color:                 #232323;
 	line-height:           0;
 	text-align:            left;
-	font-family:           'DINNextLTPro-Regular';
 	border-radius:    0 4px 4px 0;
 	-moz-border-radius:    0 4px 4px 0;
 	-webkit-border-radius: 0 4px 4px 0;
-	background:            rgba(255, 255, 255, 0.6);
+		background: rgb(249,243,237);
+	background: -moz-linear-gradient(top,  rgba(249,243,237,1) 15%, rgba(229,223,205,1) 89%, rgba(200,177,152,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(15%,rgba(249,243,237,1)), color-stop(89%,rgba(229,223,205,1)), color-stop(100%,rgba(200,177,152,1)));
+	background: -webkit-linear-gradient(top,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
+	background: -o-linear-gradient(top,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
+	background: linear-gradient(to bottom,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f3ed', endColorstr='#c8b198',GradientType=0 );
+
+	border:                solid 1px rgba(66, 0, 0, 0.3);
+	-webkit-box-shadow:  0px 4px 4px 0px rgba(3, 3, 3, 0.3);
+        
+        box-shadow:  0px 4px 4px 0px rgba(3, 3, 3, 0.3);
 	border:                solid 1px rgba(66, 0, 0, 0.3);
 }
 /*----------------------------------------------------*/
@@ -291,7 +299,6 @@ body{
 	line-height: 0;
 	text-align: left;
 	vertical-align: middle;
-	font-family: 'DINNextLTPro-Regular';
 	border-radius: 0 4px 4px 0;
 	-moz-border-radius: 0 4px 4px 0;
 	-webkit-border-radius: 0 4px 4px 0;
@@ -321,7 +328,7 @@ body{
 }
 .ProductoCajaImagen
 {
-	background-color: white; height: 161px; width: 140px; float: left
+	background-color: white; height: 161px; width: 140px; float: left; border: solid 1px rgba(66, 0, 0, 0.3);
 }
 .ProductoCajaImagen img
 {
@@ -350,7 +357,6 @@ body{
 	float:       left;
 	height:      100%;
 	width:       61.8%;
-	font-family: 'DINNextLTPro-Regular';
 	font-size:   22.31px;
 	background:  rgba(255, 255, 255, 0.6);
 	border:      solid 1px rgba(66, 0, 0, 0.3);
@@ -366,7 +372,6 @@ body{
 	color: #232323;
 }
 .DetalleProducto .Local{
-	font-family: 'DINNextLTPro-Regular';
 	font-weight: bold;
 }
 .DetalleProducto .Numero{
@@ -386,7 +391,6 @@ body{
 }
 .DetalleProducto span{
 	color:#db0000;
-	font-family: 'DINNextLTPro-Regular';
 	font-weight: bold;
 }
 .ProductoSelected .DetalleProducto{
@@ -445,7 +449,6 @@ body{
 	float:left;
 	height:      225px;
 	width:       100%;
-	font-family: 'DINNextLTPro-Regular';
 	font-size:   28.1px;
 	padding: 10px 0 0 10px;
 }
@@ -460,7 +463,7 @@ body{
 	color: #232323;
 }
 .DetalleModal .Local{
-	font-family: 'DINNextLTPro-Bold';
+	font-weight: bold;
 }
 .DetalleModal .Numero{
 	color:#db0000;
@@ -474,15 +477,15 @@ body{
 }
 .DetalleModal span{
 	color:#db0000;
-	font-family: 'DINNextLTPro-Bold';
+	font-weight: bold;
 }
 #DescripcionSuperior, #DescripcionInferior{
 	padding: 10px 0 0 10px;
-	font-family: 'DINNextLTPro-Regular';
+	
 	font-size: 23.41px;
 }
 #DescripcionSuperior span{
-	font-family: 'DINNextLTPro-Bold';
+	font-weight: bold;
 	color:#db0000;
 }
 #DescripcionSuperior li{
@@ -547,7 +550,7 @@ body{
 	width:100%;
 	height: 100%;
 	float:left;
-	font-family: 'DINNextLTPro-Regular';
+
 	font-size: 35px;
 	color: #db0000;
 	text-align: center;
@@ -570,7 +573,7 @@ body{
 #TotalInternet, #TotalNormal{
 	width: 33.3%;
 	height: 92px;
-	font-family: 'DINNextLTPro-Medium';
+
 	font-size: 29.17px;
 	color:#232323;
 	float: left;
@@ -582,7 +585,7 @@ body{
 	border:0;
 }
 #TotalInternet span, #TotalNormal span{
-	font-family: 'DINNextLTPro-Bold';
+	font-weight: bold;
 	font-size: 37.5px;
 	color:#db0000;
 }
