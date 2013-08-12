@@ -1,4 +1,5 @@
 <form id="buscador" method="post" action="/buscador">
-	<input type="search" placeholder="Busca tus productos" class="query" name="query"/>
+    <%= csrf_token_field %>
+	<input type="search" placeholder="Busca tus productos" class="query" name="q" value="<%= params[:q] %>"/>
 	<input type="image" src="/img/search.png" name="action" value="send" class="send" />
 </form>

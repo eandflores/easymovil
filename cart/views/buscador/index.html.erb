@@ -1,9 +1,8 @@
 <div id="Logo">
     <img src="/img/Logo.png">
 </div>
-<div id="buscador">
-    <input value="<%= params[:q] %>" />
-</div>
+<%= partial 'buscador/form' %>
+
 <div id="NavBar">
     <a id="Atras" href="<%= url(:home, :categorias) %>">
         <img src="/img/Atras.png">

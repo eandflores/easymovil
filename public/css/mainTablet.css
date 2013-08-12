@@ -56,7 +56,7 @@ background: -ms-linear-gradient(top,  #f9f4ee 0%,#dbd4bc 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #f9f4ee 0%,#dbd4bc 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f4ee', endColorstr='#dbd4bc',GradientType=0 ); /* IE6-9 */	
 }
-#buscador .query {height: 35px; background: #fff; border-radius: 4px; margin: 10px 23px; font-size: 24px;  width: 485px; padding: 5px 10px; box-shadow: rgba(182,153,125,.45) 0 -2px 2px, rgba(255,255,255,1) 0 2px 2px;}
+#buscador .query {height: 35px; background: #fff; border-radius: 4px; margin: 10px 23px; font-size: 24px;  width: 900px; padding: 5px 10px; box-shadow: rgba(182,153,125,.45) 0 -2px 2px, rgba(255,255,255,1) 0 2px 2px;}
 #buscador .send {position: absolute; right: 23px; top: 10px;}
 /*----------------------------------------------------*/
 /*-------------- Fin Seccion General -----------------*/
@@ -237,11 +237,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f4ee', end
 	float:  left;
 	width:  95%;
 	height: 38px;
+
 }
 .Categoria a img{
 	float:  left;
 	width:  11%;
 	height: 100%;
+	
 }
 .Categoria a input{
 	padding-left: 10px;
@@ -263,11 +265,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f4ee', end
 	background: -ms-linear-gradient(top,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
 	background: linear-gradient(to bottom,  rgba(249,243,237,1) 15%,rgba(229,223,205,1) 89%,rgba(200,177,152,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f3ed', endColorstr='#c8b198',GradientType=0 );
-
-	border:                solid 1px rgba(66, 0, 0, 0.3);
 	-webkit-box-shadow:  0px 4px 4px 0px rgba(3, 3, 3, 0.3);
-        
-        box-shadow:  0px 4px 4px 0px rgba(3, 3, 3, 0.3);
+    box-shadow:  0px 4px 4px 0px rgba(3, 3, 3, 0.3);
+	border:                solid 1px rgba(66, 0, 0, 0.3);
 }
 /*----------------------------------------------------*/
 /*------------------ Fin Categorias ------------------*/
