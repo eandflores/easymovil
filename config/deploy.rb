@@ -1,5 +1,5 @@
 set :application, "casaventanaapp"
-set :repository,  "git@bitbucket.org:avillagran/easymovil.git"
+set :repository,  "git@bitbucket.org:eandflores/easymovil.git"
 set :branch, 'master'
 set :scm, :git
 set :use_sudo, false
@@ -8,8 +8,8 @@ set :use_sudo, false
 
 
 set :port, 1295
-role :web, "root@playdigital.cl"
-role :app, "root@playdigital.cl"
+role :web, "root@localhost"
+role :app, "root@localhost"
 # role :web, "root@198.211.117.245"                          # Your HTTP server, Apache/etc
 # role :app, "root@198.211.117.245"                         # This may be the same as your `Web` server
 
